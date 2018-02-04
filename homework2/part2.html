@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+
+
+<script src="script1.js" async></script>
+
+
+
+<script type="text/javascript">
+function addthenumbers() {
+
+	let number1, number2, number3, n1, n2, n3, sum, product, addedtogether, productis;
+
+	number1 = document.forms["theform"].elements["htmlnum1"].value;
+	number2 = document.forms["theform"].elements["htmlnum2"].value;
+	number3 = document.forms["theform"].elements["htmlnum3"].value;
+
+	n1 = parseInt(number1);
+	n2 = parseInt(number2);
+	n3 = parseInt(number3);
+
+	sum = (n1 + n2 + n3);
+	product = (n1* n2 * n3);
+	array = [n1, n2, n3];
+
+	document.forms["theform"].elements["addedtogether"].value = sum;
+	document.forms["theform"].elements["averaged"].value = sum/3;
+	document.forms["theform"].elements["multiplied"].value = product;
+	document.forms["theform"].elements["smallest"].value = Math.min(n1, n2, n3);
+	document.forms["theform"].elements["largest"].value = Math.max(n1, n2, n3);
+
+
+}
+</script>
+
+
+</head>
+
+
+<body>
+
+
+<div class="topnav" id="myTopnav">
+
+  <a href="part1.html" 	onclick="myFunction()" >Part 1</a>
+  <a href="part2.html" 	onclick="myFunction()" class="active">Part 2</a>
+  <a href="part3.html"	onclick="myFunction()">Part 3</a>
+  <a href="part4.html"	onclick="myFunction()" >Part 4</a>
+  <a href="extraCredit.html"onclick="myFunction()" >Extra Credit</a>
+  <a href="home.html" 	onclick="myFunction()">hw2 Home</a>
+  <a href="../index.html"	onclick="myFunction()" >JS Homework Main</a>
+
+
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+
+</div>
+
+<div>
+  <h2>CNIT 133 Homework 2 Basic Operations</h2>
+</div>
+
+
+
+<div id="part2">
+	<h3>Homework 2 Part 2</h3>
+
+
+
+<h3>Type in 3 Numbers to Get The Sum, Average, Product, Smallest and Largest of the 3 Numbers</h3>
+<form name="theform">
+<table>
+	<tr >
+		<td>First Number:</td>
+		<td style="font-weight:bold; border: 3px solid yellow;"><input type="text" name="htmlnum1" size="14"></td>
+	</tr>
+
+	<tr>
+		<td>Second Number:</td>
+		<td style="font-weight:bold; border: 3px solid yellow;"><input type="text" name="htmlnum2" size="14"></td>
+	</tr>
+
+	<tr>
+		<td>Third Number:</td>
+		<td style="font-weight:bold; border: 3px solid yellow;"><input type="text" name="htmlnum3" size="14"></td>
+	</tr>
+
+
+	<tr>
+		<td >The Sum is:</td>
+		<td ><input type="text" name="addedtogether" size="14" readonly></td>
+	</tr>
+	<tr>
+		<td>The Average is:</td>
+		<td ><input type="text" name="averaged" size="14" readonly></td>
+	</tr>
+	<tr>
+		<td>The Numbers Multiplied is:</td>
+		<td ><input type="text" name="multiplied" size="14" readonly></td>
+	</tr>
+	<tr>
+		<td>The smallest number is:</td>
+		<td "><input type="text" name="smallest" size="14" readonly></td>
+	</tr>
+
+	<tr>
+		<td>The largest number is:</td>
+		<td><input type="text" name="largest" size="14" readonly></td>
+	</tr>
+
+</table>
+
+<br>
+
+	<input type="button" onclick="addthenumbers()" value="SUBMIT">
+	<input type="reset" value="RESET">
+</form>
+
+
+
+
+</div>
+</body>
+</html>
