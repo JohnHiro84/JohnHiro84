@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<meta charset="utf-8">
+<title>3.3 Celsius and Farenheit </title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+
+
+<script>
+	function ToCelcius() {
+		var ValueInF, parsedFValue, ComputedCelcius;
+
+		ValueInF = document.forms["myform"].elements["FarenheitValueEntered"].value;
+		
+		parsedFValue = parseInt(ValueInF);
+
+
+		if (isNaN(parsedFValue)) {
+
+			alert("the Farenheit value entered is not a number, Please input a numeric value")
+
+		} else {
+
+		ComputedCelcius = (5/9 * (parsedFValue - 32));
+
+		document.forms["myform"].elements["ComputedCelciusValue"].value = ComputedCelcius;
+
+		}
+}
+
+
+	function ToFarenheit() {
+		var ValueInC, parsedCValue, ComputedFarenheit;
+
+		ValueInC = document.forms["myform2"].elements["CelciusValueEntered"].value;
+		
+		parsedCValue = parseInt(ValueInC);
+
+
+		if (isNaN(parsedCValue)) {
+		
+			alert("the Celcius value entered is not a number, Please input a numeric value")
+
+		} else {
+
+
+		ComputedFarenheit = ( (9/5 * (parsedCValue)) + 32);
+
+		document.forms["myform2"].elements["ComputedFarenheitValue"].value = ComputedFarenheit;
+
+		}
+}
+
+
+
+
+
+
+
+
+
+</script>
+
+
+<style>
+
+
+
+form {
+
+	max-width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:2em;
+
+}
+
+</style>
+
+
+
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+
+  <a href="hw3part1.html" 	onclick="myFunction()" >Part 1</a>
+  <a href="hw3part2.html" 	onclick="myFunction()" >Part 2</a>
+  <a href="hw3part3.html"	onclick="myFunction()" class="active">Part 3</a>
+  <a href="hw3part4.html"	onclick="myFunction()" >Part 4</a>
+  <a href="../jshw1/index.html"	onclick="myFunction()" >Home</a>
+</div>
+
+
+
+<section class="body">
+
+
+<form name="myform">
+
+	<table>
+	<tr><h1>Farenheit to Celsius Converter</h1>
+	</tr>
+
+	<tr>
+		<td>Please Enter Degreens in Farenheit to Convert to Celcius</td>
+		<td><input type="text" name="FarenheitValueEntered" size="26"></td>
+	</tr>
+
+	<tr>
+		<td>Celcius Value Computed</td>
+		<td><input type="text" name="ComputedCelciusValue" size="26" readonly></td>
+	</tr>
+
+
+	</table>
+
+	<br>
+
+	<input type="button" onclick="ToCelcius()" value="Get Celcius" >
+	<input type="reset" value="RESET">
+</form>
+
+
+
+<form name="myform2">
+
+	<table>
+
+	<tr><h1>Celsius to Farenheit Converter</h1>
+
+	<tr>
+		<td>Please Enter Degreens in Celcius to Convert to Farenheit</td>
+		<td><input type="text" name="CelciusValueEntered" size="26"></td>
+	</tr>
+
+	<tr>
+		<td>Farenheit Value Computed</td>
+		<td><input type="text" name="ComputedFarenheitValue" size="26" readonly></td>
+	</tr>
+
+
+	</table>
+
+	<br>
+
+	<input type="button" onclick="ToFarenheit()" value="Get Farenheit" >
+	<input type="reset" value="RESET">
+</form>
+
+
+</section>
+</body>
