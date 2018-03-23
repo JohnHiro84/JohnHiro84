@@ -1,0 +1,206 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="navbar.css">
+	<title>JS Hw 4.2</title>
+	 <meta charset="UTF-8">
+
+<style>
+
+.firstLine {
+	background-color: #b30000;
+
+	color:white;
+	font-size:30px;
+	padding: 12px;
+}
+
+.firstLine th {
+
+	width:200px;
+}
+
+.newLine {
+	font-size:24px;
+	background-color:#e0e0eb;
+
+}
+
+tr:nth-child(even) {
+    background: #e0e0eb;
+}
+
+.main {
+	padding-top:5rem;
+	max-width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+</style>
+
+
+</head>
+
+
+<body>
+
+<ul>
+  <li><a href="cnit133hw4pt1ab.html">Part1</a></li>
+  <li><a href="jshw4pt2.html" class="active" >Part2</a></li>
+  <li><a href="jshw4pt3.html">Part3</a></li>
+  <li><a href="https://johnhiro84.github.io/JohnHiro84/ccsf/js/jshw1/index.html">Homework Main</a></li>
+</ul>
+
+
+<div class="main">
+
+<p id="demo"></p>
+ 
+ 
+
+<h1> See Your Money Grow with our fixed Interest Rates! </h1>
+<table>
+ 
+  <tr class="firstLine" style="padding:16px;">
+    <th >Year</th>
+    <th>Amount</th>
+    <th>Interest Rate</th>
+  </tr>
+
+ 
+</table>
+ 
+ 
+ 
+ 
+ 
+
+<script>
+var text = "";
+var i;
+var y;
+var initialMoney = 1000;
+var withInterest =1;
+var stringy;
+var yearDisplayed =0;
+var intRate = .05;
+
+document.getElementById("demo").innerHTML = text;
+ 
+
+for (y = 0; y < 60; y++) {
+ 
+
+	yearDisplayed++;
+
+	//increase the interest rates every 10 years
+	if (y > 9 && y <20) {
+	intRate = .06;	
+	} 
+	
+	else if(y > 19 && y <30) {
+	intRate = .07;
+	}
+
+	else if(y > 29 && y <40) {
+	intRate = .08;
+	}
+
+	else if(y > 39 && y <50) {
+	intRate = .09;
+	}
+
+	else if(y > 49 && y <60) {
+	intRate = .10;
+	}
+
+
+	//everytime it starts a new interest rate, restart money to initial amount ie 1000
+	if(y==10 || y==20 || y==30 || y==40 || y==50) {
+	var initialMoney = 1000;
+	
+	}
+
+	if(y==10 || y==20 || y==30 || y==40 || y==50) {
+	var initialMoney = 1000;
+	yearDisplayed =1;
+	}
+
+
+
+
+
+    var createtr = document.createElement("tr");
+
+
+	if(y==10 || y==20 || y==30 || y==40 || y==50) {
+	
+	createtr.classList.add("newLine");
+	}
+
+
+//create the year 
+
+    var th1Year = document.createElement("th");
+
+    var yearNum = document.createTextNode((yearDisplayed.toString()));
+
+    th1Year.appendChild(yearNum);
+
+    createtr.appendChild(th1Year);
+
+
+
+
+//the money after multiplying with interest rate
+
+
+    var th2interestRate = document.createElement("th");
+
+    initialMoney = initialMoney * (1 + intRate);
+
+    var stringy = (initialMoney.toFixed(2)).toString();
+
+    var textMoney = document.createTextNode(stringy);
+
+    th2interestRate.appendChild(textMoney);
+
+    createtr.appendChild(th2interestRate);
+
+
+
+// display the interest rate
+
+
+
+    var Rate = document.createElement("th");
+
+    var interestRate =document.createTextNode(intRate.toString() + "%");
+
+    Rate.appendChild(interestRate);
+
+    createtr.appendChild(Rate);
+
+
+
+// appending the table with the tr, and 3x th
+
+    var select = document.querySelector("table");
+    select.appendChild(createtr);
+
+
+}
+ 
+
+</script>
+
+</div>
+</body>
+</html>

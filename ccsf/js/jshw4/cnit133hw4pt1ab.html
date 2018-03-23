@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="navbar.css">
+	<title>JS Hw 4.1</title>
+	 <meta charset="UTF-8">
+<style>
+.main {
+	max-width:500px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:5rem;
+
+	
+}
+
+</style>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<ul>
+  <li><a class="active" href="cnit133hw4pt1ab.html">Part1</a></li>
+  <li><a href="jshw4pt2.html">Part2</a></li>
+  <li><a href="jshw4pt3.html">Part3</a></li>
+  <li><a href="https://johnhiro84.github.io/JohnHiro84/ccsf/js/jshw1/index.html">Homework Main</a></li>
+</ul>
+
+
+<div class="main">
+
+<h1>JavaScript Loops & Do/While</h1>
+
+<h2>Loops</h2>
+
+<p>Every 3rd Number Between 5 and 20 displayed via a Loop:</p>
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+
+
+
+<h2>Do/While</h2>
+
+
+<p>Every 4th number from 3 to 31 in a Do/While Loop</p>
+<p id="Every4thID"></p>
+<p id="SumID"></p>
+<p id="ProductID"></p>
+
+
+<script>
+var ResultSum = 0;
+var ResultProduct = 1;
+var text="";
+var i;
+
+
+for (i = 5; i <= 20; i= i +3) {
+
+    ResultSum = ResultSum + i;
+    text +=  i + "<br>";
+    ResultProduct = ResultProduct *i;
+}
+
+
+document.getElementById("demo").innerHTML = text;
+document.getElementById("demo2").innerHTML = "The Sum of these numbers is: " + ResultSum;
+document.getElementById("demo3").innerHTML = "The Product of these numbers is: " + ResultProduct;
+
+
+
+
+var every4th = "";
+var i = 3;
+var Sum1b = 0;
+var Product1b = 1;
+
+do {
+    every4th += "<br>" + i;
+    Sum1b += i;
+    i=i+4;
+    Product1b = Product1b * i;
+}
+while (i < 32);  
+
+document.getElementById("Every4thID").innerHTML = every4th;
+document.getElementById("SumID").innerHTML = "The Sum of these numbers is: " + Sum1b;
+document.getElementById("ProductID").innerHTML = "The Product of these numbers is: " + Product1b;
+</script>
+
+
+
+
+
+
+
+
+<iframe src="pt1iframe.html"></iframe>
+
+
+</div>
+</body>
+</html>
