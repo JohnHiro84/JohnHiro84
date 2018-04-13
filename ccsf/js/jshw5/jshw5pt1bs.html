@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<meta charset="utf-8">
+	<title>Homework 5.1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script>
+  function validateSportsForm() {
+
+      var firstNameVar = document.forms["FormSports"]["FirstName"].value;
+      var lastNameVar = document.forms["FormSports"]["LastName"].value;
+      var radios = document.getElementsByName('sport');
+      var radioValue = false;
+      console.log(radios);
+
+      //check to see if any of the 3 sport radio buttons were checked
+
+      for (var i = 0; i < radios.length; i++) {
+          if (radios[i].checked) {
+              // get value, set checked flag or do whatever you need to
+              radioValue = true;
+              console.log(radioValue);
+          }
+      }
+
+      //check to see if a checkbo was unchecked
+
+      var position = document.getElementsByName('position');
+      var positionBoolean = false;
+
+      for (var i = 0; i < position.length; i++) {
+          if (position[i].checked) {
+              // get value, set checked flag or do whatever you need to
+              positionBoolean = true;
+              console.log(positionBoolean);
+          }
+      }
+
+        //check to see if an emotion was selected
+
+        //var emotionValue = document.getElementById("emotion").value;
+        //document.getElementById("demo").innerHTML = emotionValue;
+
+
+
+      if (firstNameVar === "") {
+          alert("First Name must be filled out");
+        return false;
+      } else if (lastNameVar ===""){
+        alert("Last Name must be filled out");
+        return false;
+      } else if (radioValue === false){
+        alert("please select a sport");
+        return false;
+      } else if (positionBoolean === false){
+        alert("please select whether you play or watch sports");
+        return false;
+      }
+
+
+  }
+  </script>
+
+</head>
+
+
+
+
+<body>
+
+
+
+
+
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">JavaScript Homework - Arrays</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li ><a href="https://johnhiro84.github.io/JohnHiro84/ccsf/js/jshw1/index.html">Home</a></li>
+	      <li class="active"><a href="jshw5pt1bs.html">5.1</a></li>
+	      <li><a href="jshw5pt2bs.html">5.2</a></li>
+	      <li ><a href="jshw5pt3bs.html">5.3</a></li>
+	    </ul>
+	  </div>
+	</nav>
+
+
+
+
+
+<div class="container">
+
+	<h2>Homework 5 part 1</h2>
+	<p>Fill Out all the fields about sports!</p>
+
+  <form name="FormSports"
+  onsubmit="return validateSportsForm()" method="post">
+
+  Athlete First name: <input type="text" name="FirstName" value="Yao"><br>
+  Athlete Last name: <input type="text" name="LastName" value="Ming"><br>
+
+  <br>
+
+  <input type="radio" name="sport" value="basketball"> Basketball<br>
+  <input type="radio" name="sport" value="football"> Football<br>
+  <input type="radio" name="sport" value="soccor"> Soccor
+
+  <br>
+  <br>
+
+  <select id="emotion">
+    <option value="fun">fun</option>
+    <option value="boring">boring</option>
+    <option value="interesting">interesting</option>
+    <option value="strategic">strategic</option>
+  </select>
+
+  <br>
+
+  <input type="checkbox" name="position" value="Play"> I play sports<br>
+  <input type="checkbox" name="position" value="Watch"> I watch sports<br>
+
+  <input type="submit" value="Submit">
+
+</form>
+
+</div>
+
+</body>
+</html>

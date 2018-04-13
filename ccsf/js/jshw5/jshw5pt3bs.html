@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<meta charset="utf-8">
+	<title>Homework 5.3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+	body {font-family: Arial, Helvetica, sans-serif;}
+
+	/* The Modal (background) */
+	.modal {
+	    display: none; /* Hidden by default */
+	    position: fixed; /* Stay in place */
+	    z-index: 1; /* Sit on top */
+	    padding-top: 100px; /* Location of the box */
+	    left: 0;
+	    top: 0;
+	    width: 100%; /* Full width */	
+	    height: 100%; /* Full height */
+	    overflow: auto; /* Enable scroll if needed */
+	    background-color: rgb(0,0,0); /* Fallback color */
+	    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	}
+
+	/* Modal Content */
+	.modal-content {
+	    background-color: #fefefe;
+	    margin: auto;
+	    padding: 20px;
+	    border: 1px solid #888;
+	    width: 80%;
+	}
+
+	/* The Close Button */
+	.close {
+	    color: #aaaaaa;
+	    float: right;
+	    font-size: 28px;
+	    font-weight: bold;
+	}
+
+	.close:hover,
+	.close:focus {
+	    color: #000;
+	    text-decoration: none;
+	    cursor: pointer;
+	}
+</style>
+
+
+
+</head>
+
+
+
+
+<body>
+
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">JavaScript Homework - Arrays</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li ><a href="https://johnhiro84.github.io/JohnHiro84/ccsf/js/jshw1/index.html">Home</a></li>
+	      <li><a href="jshw5pt1bs.html">5.1</a></li>
+	      <li><a href="jshw5pt2bs.html">5.2</a></li>
+	      <li class="active"><a href="jshw5pt3bs.html">5.3</a></li>
+	    </ul>
+	  </div>
+	</nav>
+
+
+
+
+
+	<div class="container">
+
+
+
+
+
+	<h2>Homework 5 part 3</h2>
+	<p>Find The Capital and Population of a few different States in the United States</p>
+	<form id="myForm">
+	
+	<table>
+	
+		<tr>
+		        <td>
+				<label for="StateNameUserQuery">Input a State:</label>
+	        	</td>
+		        <td>
+			<input type="text" id="StateNameUserQuery" name="stateName" value="California"><br>
+		        </td>
+		</tr>
+	
+	
+	
+	
+		<tr>
+		        <td>
+				<label for="Abbrev">Abbreviated Name:</label>
+	        	</td>
+		        <td>
+				<input type="text" id="Abbrev" value="">
+		        </td>
+	        </tr>
+
+
+		<tr>
+	        	<td>
+				<label for="FullName">Full State Name:</label>
+        		</td>
+	        	<td>
+				<input type="text" id="FullName" value=""><br>
+	        	</td>
+		</tr>
+
+
+	        <tr>
+	        	<td>
+				<label for="Capital">State's Capital:</label>
+        		</td>
+	        	<td>
+				<input type="text" id="Capital" value="">
+	        	</td>
+    		</tr>
+
+		<tr>
+	        	<td>
+				<label for="Population">Population:</label>
+        		</td>
+	        	<td>
+				<input type="text" id="Population" value="">
+	        	</td>
+		</tr>
+	</table>
+
+
+
+</form>
+
+
+
+
+
+
+	<button onclick="myFunction()">Find State Info</button>
+
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+	    <p>Error! Please enter A State Name or It's Abbreviation</p>
+	  </div>
+
+	</div>
+
+
+
+
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<script>
+
+
+
+
+function myFunction() {
+
+var array = [
+
+	["AL", "Alabama", "Montgomery", "4,779,736"],
+	["AK", "Alaska", "Juneau", "710,231"],
+	["AZ", "Arizona", "Phoenix", "6,392,017"],
+	["AR", "Arkansas", "Little Rock", "2,915,918"],
+	["CA", "California", "Sacramento", "37,253,956"],
+	["CO", "Colorado", "Denver", "5,029,196"]
+];
+
+
+var query = document.getElementById("StateNameUserQuery").value;
+queryLc = query.toLowerCase();	
+
+var StateInfoFound;
+
+
+	for(var x = 0; x < array.length; x++) {
+		if((array[x][0]).toLowerCase() === queryLc || (array[x][1]).toLowerCase() === queryLc) {
+
+			console.log(queryLc);
+			console.log(array[x].toString());
+			console.log("a match!");
+
+			StateInfoFound = array[x];
+			document.getElementById("Abbrev").value = array[x][0];
+			document.getElementById("FullName").value = array[x][1];
+			document.getElementById("Capital").value = array[x][2];
+			document.getElementById("Population").value = array[x][3];
+			modal.style.display = "none";
+			return StateInfoFound;
+		} else {
+			console.log('no match found !');
+			document.getElementById("Abbrev").value = "";
+			document.getElementById("FullName").value = "";
+			document.getElementById("Capital").value = "";
+			document.getElementById("Population").value = "";
+			modal.style.display = "block";
+
+		}
+	}
+
+
+}
+
+
+
+
+
+
+</script>
+
+</div>
+
+</body>
+</html>
