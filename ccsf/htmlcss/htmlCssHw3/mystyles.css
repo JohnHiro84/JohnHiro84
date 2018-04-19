@@ -1,0 +1,99 @@
+
+
+#theTable {
+	width:300px;
+	border:2px solid grey;
+	border-style:outset;
+	display:inline-block;
+}
+
+
+
+
+body {
+	background-color:#CCFFFF;
+}
+
+div {
+	width:760px; 
+	margin:0 auto; 
+	border:2px double blue; 
+	background-color:#FFF; 
+	padding:10px;
+}
+
+h1{
+	text-align:center; 
+	color:#330066;
+}
+
+
+h3 {
+	text-align:center; 
+	color:#FF0000; 
+	font-size:24px;
+}
+
+#firstP {
+	text-align:center; 
+	font-size: 20px;"
+}
+
+.Italicise {
+	font-style: italic;
+}
+
+.yellow {
+	 background-color:yellow;
+   	 font-weight: bold;
+}
+
+#letterSpace {
+	text-align:center; 
+	letter-spacing:5px;
+}
+
+img {
+	width:150px;
+	height:140px;
+	float:left;
+	margin-right:20px;
+}
+
+ul {
+	list-style-image: url('trillium.gif')
+}
+
+.Text {
+	font-size:50px; 
+	color:#FF0000;
+   	font-weight: bold;
+	font-style: italic;
+}
+
+
+tr, th, td {
+	width:150px;
+	border:1px solid black;
+}
+
+
+tr:nth-child(even) {
+	background-color: #999999;
+}
+
+
+th {
+	color:#CC0000;
+{
+
+
+
+
+
+
+
+
+
+
+
