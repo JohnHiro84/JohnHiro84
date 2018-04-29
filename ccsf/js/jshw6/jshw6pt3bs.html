@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Homework 6.3</title>
+<meta charset="utf-8">
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">JavaScript Homework - Arrays</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li ><a href="https://johnhiro84.github.io/JohnHiro84/ccsf/js/jshw1/index.html">Home</a></li>
+	      <li ><a href="jshw6pt1bs.html">6.1</a></li>
+	      <li><a href="jshw6pt2bs.html">6.2</a></li>
+	      <li class="active"><a href="jshw6pt3bs.html">6.3</a></li>
+	    </ul>
+	  </div>
+	</nav>
+
+
+<h2>Part 2: Time</h2>
+
+
+
+<h3>.toString Method:</h3>
+<p id="1stFormat"></p>
+
+
+<h3>.toLocaleString Method:</h3>
+<p id="2ndFormat"></p>
+
+
+<h3>.toUTCString Method:</h3>
+<p id="3rdFormat"></p>
+
+<h3> Getting the Timezone Offset between pst and utc: </h3>
+<p id="pop2"></p>
+
+<h3> Getting the Timezone Offset between est and utc:</h3>
+<p id="pop3"></p>
+
+
+
+<button onclick="myFunction()">Try it</button>
+
+
+
+
+
+
+
+
+
+
+
+<h2>Part 2: Phone Number</h2>
+
+
+
+
+<form id="myForm">
+Phone Number Input :<br>
+<input type="text" id="phoneNumber">
+
+<br>
+<br>
+Phone Number Output :<br>
+<input type="text" name="areaC"  >
+<input type="text" name="restNum"  >
+<br>
+
+</form>
+
+
+<p id="tag1"></p>
+<p id="tag2"></p>
+
+
+<button onclick="myFunction2()">Try it</button>
+
+
+
+
+
+<script>
+function myFunction() {
+
+   var date = new Date();
+
+    var nString = date.toString();
+
+    document.getElementById("1stFormat").innerHTML = nString;
+	
+    var Locale = date.toLocaleString();
+
+    document.getElementById("2ndFormat").innerHTML = Locale;
+
+    var toUTC = date.toUTCString();
+
+    document.getElementById("3rdFormat").innerHTML = toUTC;
+
+
+
+
+
+	var d = new Date();
+	var y = d;
+
+	y.setHours(y.getHours()+3);
+
+
+
+	//getting offset for pst	
+	var pstto = d.getTimezoneOffset();
+	document.getElementById("pop2").innerHTML = pstto;
+
+	// getting offset for est
+	var estto = pstto - 180;
+	document.getElementById("pop3").innerHTML = estto;
+
+
+}
+
+</script>
+
+
+<script>
+function myFunction2() {
+	var pullName = document.getElementById("phoneNumber").value;
+
+    
+    var str = pullName;
+
+    
+
+    var code = str.substring(0, 3);
+
+    var two = str.substring(3,6);
+    var three = str.substring(6,10);
+
+	var codeP = "(" + code + ")";
+
+    
+    document.forms["myForm"]["areaC"].value = codeP;
+    
+    document.forms["myForm"]["restNum"].value = two + "-" + three;
+
+}
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
