@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<title>Pacific Trails Resort</title>
+		<link rel="stylesheet" type="text/css" href="pacific.css">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<meta name="description" content="A relaxing getaway vacation resort with many activities thats fun for the whole family" />
+
+
+
+
+
+<style>
+
+body {
+	text-align:left;
+}
+
+.item1 { grid-area: header; }
+.item2 { grid-area: menu;
+}
+.item3 { grid-area: main;
+
+			 }
+
+.item4 { grid-area: picture; }
+.itemX { grid-area: content;
+
+				}
+.itemX p {
+	margin-top:0;
+
+}
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main main main'
+
+    'menu picture picture content content content'
+    'menu footer footer footer footer footer';
+  background-color: #2196F3;
+
+}
+.grid-container > div {
+
+}
+</style>
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+<div class="grid-container" id="wrapper">
+
+	<div class="item1">
+		<h1>Pacific Trails Resort</h1>
+	</div>
+
+	<div class="item2">
+		<div id="nav">
+
+		<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="yurts.html">Yurts</a></li>
+		<li><a href="activities.html">Activities</a></li>
+		<li><a href="reservations.html">Reservations</a></li>
+		</ul>
+
+
+
+
+	</div>
+
+	</div>
+
+	<div class="item3">
+		<h2>Enjoy Nature in Luxury</h2>
+	</div>
+
+	<div class="item4">
+		<img src="coast.jpg" alt="An image of a beautiful coast">
+	</div>
+
+	<div class="itemX">
+
+		<p><span class="resort">Pacific Trail Resort</span> offers a special lodging experience on the California North Coast. Relax in serenity with panoramic views of the Pacific Ocean.</p>
+
+		<ul>
+			<li>Private yurts with decks overlooking the ocean</li>
+			<li>Activities lodge with fireplace and gift shop</li>
+			<li>Nightly fine dining at the Overlook Cafe</li>
+			<li>Heated outdoor pool</li>
+			<li>Guided hiking tours</li>
+		</ul>
+	</div>
+
+	<div class="item5">
+
+		<div id="contact">
+			<p><span class="resort">Pacific Trails Resort</span><br>
+			12010 Pacific Trails Road<br>
+			Zephyr, CA 94555<br>
+			1-888-555-5555</p>
+		</div>
+
+		<div id="footer">
+
+			<p>Copyright &copy; 2011 Pacific Trails Resort</p>
+			<p id="footerStuff">Alex Yambao</p>
+		</div>
+
+	</div>
+	</div>
+
+
+</body>
+</html>
