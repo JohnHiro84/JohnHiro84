@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Help</title>
+<style>
+
+html, body {
+  margin:0;
+  padding:0;
+}
+h1 {
+  color:green;
+}
+
+div {
+    width:800px;
+    margin: auto;
+}
+
+#userBar {
+  display: inline-block;
+
+}
+
+#userEmail {
+  font-weight:700;
+  color: #000080;
+}
+
+</style>
+
+</head>
+<body>
+
+<div>
+
+  <a href="/postUserExercise">Post a new exerise</a>
+  <a href=<%= "/loggedInUser/" +id.toString()%>>All Users exercises</a>
+  <a href="/loggedinUserSearchbyDateForm2">Search By Date</a>
+  <a href="/help">Help</a>
+
+  <p id="userBar">Logged In As: <span id="userEmail"><%= email %></span></p>
+  <a href="/logout">Logout</a>
+
+
+  <h2>Post exercise</h2>
+
+    <h3>Logging In/Out</h3>
+      <p>/checkIfLogdIn</p>
+      <p>get</p>
+      <p>/userIn</p>
+      <p>get</p>
+      <p>/login</p>
+      <p>get/post</p>
+      <p>/logout</p>
+      <p>get</p>
+      <p>/help</p>
+      <p>get</p>
+      <p>/helpAdmin</p>
+      <p>get</p>
+
+    <h3>create a new user</h3>
+      <p>/signupUser</p>
+      <p>get/post</p>
+
+    <h3>Find All Users</h3>
+      <p>/findAllUsers</p>
+      <p>get</p>
+
+
+      <h3>Post a users exercise</h3>
+      <p>/postUserExercise</p>
+      <p>get/post</p>
+
+      <h3>get a users entire list of exercises</h3>
+      <p>/loggedinUser/:userId</p>
+      <p>get</p>
+
+      <h3>search within a date range of exerises</h3>
+      <p>/loggedinUserSearchbyDateForm2</p>
+      <p>get/post</p>
+
+      <h3>Older stuff</h3>
+
+  <p>http://localhost:3000/findAllUsers</p>
+  <p>app.get('/postUserExercise'</p>
+  <p>app.post('/postUserExercise' front end</p>
+
+  <p>app.post('/loggedinUser/:userId' where to post the new exercise entries</p>
+  <p>app.get('/loggedinUser/:userId',</p>
+  <p>app.get('/findAllUsers'</p>
+  <p>app.post('/signupUser', signing up user, web token etc</p>
+  <p>app.post('/loginUser', logging in user, web token</p>
+  <p>app.get('/loggedinUserSearchbyDateQ/5b4e8cd5655c950be44cc592?startdate=2017-01-01&enddate=2019-01-01'</p>
+
+
+
+</div>
+</body>
+</html>

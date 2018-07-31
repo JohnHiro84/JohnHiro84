@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<style>
+
+h1 {
+  color:green;
+}
+
+div {
+    width:800px;
+    margin: auto;
+}
+
+
+#userBar {
+  display: inline-block;
+
+}
+
+#userEmail {
+  font-weight:700;
+  color: #000080;
+}
+</style>
+
+</head>
+<body>
+
+<div>
+
+  <a href="/postUserExercise">Post a new exerise</a>
+  <a href=<%= "/loggedInUser/" +id.toString()%>>All Users exercises</a>
+  <a href="/loggedinUserSearchbyDateForm2">Search By Date</a>
+  <a href="/help">Help</a>
+  <p id="userBar">Logged In As: <span id="userEmail"><%= email %></span></p>
+  <a href="/logout">Logout</a>
+
+<h1>Welcome to Fitness Tracker!</h1>
+<h1>Hello <%= email %></h1>
+<h1>User Id:<%= id %></h1>
+
+</div>
+</body>
+</html>
