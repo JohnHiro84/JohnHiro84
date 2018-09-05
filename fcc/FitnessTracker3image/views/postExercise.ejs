@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Post New Exerise</title>
+<style>
+
+html, body {
+  margin:0;
+  padding:0;
+}
+h1 {
+  color:green;
+}
+
+div {
+    width:800px;
+    margin: auto;
+}
+
+#userBar {
+  display: inline-block;
+
+}
+
+#userEmail {
+  font-weight:700;
+  color: #000080;
+}
+
+
+.avatar {
+    margin-left: 1em;
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+</style>
+
+</head>
+<body>
+
+<div>
+
+  <a href="/records/postUserExercise">Post a new exerise</a>
+  <a href=<%= "/records/loggedInUser/" +id.toString()%>>All Users exercises</a>
+  <a href="/records/loggedinUserSearchbyDateForm2">Search By Date</a>
+  <a href="/user/help">Help</a>
+  <a href="/uploadSmallImage">
+  <img class="avatar" src="data:image/png;base64,<%- Image %>" />
+</a>
+  <p id="userBar"><span id="userEmail"><%= email %></span></p>
+  <a href="/log/logout">Logout</a>
+
+
+
+  <h1>Post exercise</h1>
+
+
+  <form id="contact-form" method="POST" action="postUserExercise">
+<table>
+  <table>
+    <tr>
+      	<td> <label for="description">exercise description:</label></td>
+        <td><input type="text" placeholder="jogging" name = "description"/></td>
+    </tr>
+    <tr>
+        <td><label for="duration">duration of exercise(in minutes):</label></td>
+        <td><input type="text" placeholder="30" name = "duration"/></td>
+    </tr>
+    <tr>
+    	  <td><label for="date">date of exercise(yyyy-mm-dd):</label></td>
+        <td><input type="text" placeholder="2018-10-15" name = "date"/></td>
+    </tr>
+    <tr>
+    	  <td><input type="submit" value="Submit"></td>
+        <td></td>
+    </tr>
+  </table>
+</form>
+
+
+</div>
+</body>
+</html>

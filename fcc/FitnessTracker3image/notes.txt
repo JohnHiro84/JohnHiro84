@@ -1,0 +1,59 @@
+//from
+
+//https://www.youtube.com/watch?v=3f5Q9wDePzY
+//Uploading Files to MongoDB With GridFS (Node.js App)
+
+
+
+best way to store and display small images in mongodb
+https://stackoverflow.com/questions/46591064/best-method-suited-to-store-and-display-small-image-in-mongo-database
+  ->save image as base64
+
+
+https://stackoverflow.com/questions/39711217/how-to-save-base64-directly-to-mongoose-in-express-js
+used
+
+https://gist.github.com/aheckmann/2408370
+
+
+
+http://menge.io/2015/03/24/storing-small-images-in-mongodb/
+  -> thumbnail pictures smaller than 16mb can be stored
+
+
+https://stackoverflow.com/questions/24523532/how-do-i-convert-an-image-to-a-base64-encoded-data-url-in-sails-js-or-generally
+saving an image to base64 string
+
+https://codeburst.io/how-to-handle-multipart-form-data-in-nodejs-file-uploading-in-nodejs-26c0cb88adcf
+
+upload multipart form data
+https://www.npmjs.com/package/express-fileupload
+
+rendering base64 images
+https://stackoverflow.com/questions/28440369/rendering-a-base64-png-with-express
+
+https://stackoverflow.com/questions/31245140/using-binary-data-from-mongo-collection-as-image-source
+
+base64 decoder
+https://www.opinionatedgeek.com/codecs/base64decoder
+https://stackoverflow.com/questions/8499633/how-to-display-base64-images-in-html
+
+
+restriting the height and width of an image
+https://stackoverflow.com/questions/17774928/js-get-image-width-and-height-from-the-base64-code
+
+how to restrict image size
+  https://github.com/image-size/image-size
+
+
+
+can mobile phones use sessions?
+
+
+  done    make a default picture if no picture uploaded yet
+  done    restrict file size
+  done    restrict file type
+  done    restrict dimensions to 400 by 400
+  done    create a link to the uploadSmallImage route
+  done    add small image to the other pages
+  done    add up minutes in page
