@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Url Shortener Microservice</title>
+<style>
+
+html, body {
+  margin:0;
+  padding:0;
+}
+h1 {
+  color:green;
+}
+
+div {
+    width:500px;
+    margin: auto;
+}
+</style>
+
+</head>
+<body>
+
+<div>
+<h1>Webpage Shortening Service</h1>
+<p>This is a project from freecodecamp.</p>
+<p><a href="https://thread-paper.glitch.me/">Microservice - Url Shortener</a></p>
+<h2>All Urls Returned Pretty</h2>
+<p>All the saved Urls Returned with Ejs template/html</p>
+
+<table>
+  <tr>
+    <th>Shortened Url</th>
+    <th>Original Url</th>
+  </tr>
+<% for(var i=0; i < entirety.length; i++) { %>
+   <tr>
+     <td><a href= <%=entirety[i].newShortUrl.toString() %>> <%= entirety[i].newShortUrl %></a></td>
+     <td><a href= <%=entirety[i].origUrl.toString() %>><%= entirety[i].origUrl %></a></td>
+   </tr>
+<% } %>
+</table>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
