@@ -1,0 +1,554 @@
+html, body, main {
+  height: 100%;
+  width:100%;
+  margin:0;
+  padding:0;
+  font-family: 'Merriweather', serif;
+
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/*all the landing page stuff */
+html, body {
+
+	margin:0;
+	padding:0;
+}
+
+.heroImage {
+	height:100%;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	width:100%;
+
+}
+
+.imageContainer {
+	position:relative;
+	text-align:center;
+}
+.titleCaptionHolder {
+	position:absolute;
+	left:0;
+	top:35%;
+	width: 100%;
+	text-align: center;
+	color:white;
+}
+
+.caption {
+
+	font-size:2.5em;
+	letter-spacing:2px;
+	font-weight:700;
+}
+
+
+@media screen and (max-width:600px) {
+	.caption {
+
+	font-size:1em;
+	}
+}
+
+@media screen and (min-width:601px) and (max-width:850px) {
+	.caption {
+
+	font-size:1.5em;
+	}
+}
+
+
+
+
+
+.imageSection2 {
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	width:100%;
+}
+
+.centeredHeading {
+	text-align:center;
+	margin:2em 0;
+	line-height: 1.75em;
+	width:90%;
+	max-width:100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+/* What We're About Section */
+.WhatWe {
+	min-height:20em;
+	padding-top:2em;
+}
+/* What We're About Section */
+
+/* Our Clients Section */
+/* Our Clients Section */
+
+.clientLogos {
+	display:flex;
+	flex-wrap: wrap;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 90%;
+	padding-bottom:4em;
+}
+
+.clientLogos > img {
+	/*background-color:green; */
+}
+
+
+
+@media screen and (max-width:600px) {
+	.clientLogos > img {
+		width:120px;
+		height:120px;
+	}
+
+	.clientLogos {
+		max-width:360px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+}
+
+@media screen and (min-width:601px) and (max-width:800px) {
+	.clientLogos > img {
+		width:200px;
+		height:200px;
+	}
+	.clientLogos {
+		max-width:600px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+}
+
+
+/* Our Reviews */
+/* Our Reviews */
+
+.ReviewsSection {
+	background-color:gray;
+	color:white;
+}
+
+.Reviews {
+	max-width:730px;
+	margin-left: auto;
+	margin-right:auto;
+	padding-top:1.5em;
+	padding-bottom:1.5em;
+}
+.Reviews > Img {
+	border-radius: 50%;
+	width:80px;
+	height:80px;
+	display:inline-block;
+	float left;
+	margin-right:1.5em;
+	margin-left:1em;
+	margin-top:1em;
+	margin-bottom:1em;
+
+
+}
+
+@media screen and (max-width:800px) {
+	.ReviewsSection {
+		background-color:gray;
+		color:white;
+	}
+
+	.Reviews > Img {
+		margin:1em;
+		margin-bottom:2em;
+		float:left;
+		display:inline-block;
+		height:80px;
+		width:80px;
+	}
+
+	.ReviewText {
+		max-width:calc((100%-64px));
+		padding-top:.3em;
+		padding-bottom:1.5em;
+		padding-left:1em;
+		padding-right:1em;
+
+	}
+
+	.ReviewerName {
+		font-weight:700;
+		display:block;
+		margin:0;
+		text-decoration:none;
+		color:white;
+		margin-top:3px;
+		padding-left:7em;
+
+	}
+}
+
+@media screen and (min-width:801px) {
+
+.ReviewText {
+	display:inline-block;
+	max-width: 600px;
+	vertical-align: top;
+	padding-top:1em;
+}
+.ReviewerName {
+	font-weight:700;
+	display:block;
+	margin:0;
+	text-decoration:none;
+	color:white;
+	margin-top:3px;
+	margin-left:1em;
+}
+
+}
+/* Services Icons */
+
+
+
+
+
+
+@media screen and (max-width:600px) {
+
+	.ServicesIconsWrapper {
+		font-size:1em;
+		color:#551a8b;
+		clear:both;
+		display:flex;
+		flex-wrap:wrap;
+	        background-color: #ddd1e7;
+		padding-bottom:3.5em;
+	}
+
+	.ServicesIcons {
+		min-width 60px;
+		width:calc((100% - 96px)/3);
+		text-align:center;
+		margin:16px;
+		display:inline-block;
+	}
+	.ServicesIcons > .TheIcon {
+
+		font-size:2.5em;
+	}
+
+	.ServicesIcons > h1 {
+		font-size:1em;
+	}
+
+}
+
+
+@media screen and (min-width:601px) and (max-width:750px)  {
+
+
+.ServicesIconsWrapper {
+	font-size:1em;
+	color:#551a8b;
+	clear:both;
+	display:flex;
+	flex-wrap:wrap;
+	background-color:#ddd1e7;
+}
+
+.ServicesIcons {
+	display:inline-block;
+	margin:4em 2em 4em 2em;
+	width:calc((100% - 200px)/3);
+	text-align:center;
+
+
+}
+
+.ServicesIcons > .TheIcon {
+
+	font-size:6em;
+}
+
+.ServicesIcons > h1 {
+	font-size:1.5em;
+}
+}
+
+
+
+@media screen and (min-width:751px)  {
+
+.ServicesIconsWrapper {
+	font-size:1em;
+	color:#551a8b;
+	clear:both;
+	display:flex;
+	flex-wrap:wrap;
+	background-color:#ddd1e7;
+}
+
+.ServicesIcons {
+	display:inline-block;
+	margin:4em 2em 4em 2em;
+	width:calc((100% - 200px)/3);
+	text-align:center;
+	min-width:180px;
+
+}
+
+
+.ServicesIcons > .TheIcon {
+
+	font-size:9em;
+}
+
+.ServicesIcons > h1 {
+	font-size:2em;
+}
+}
+
+
+
+
+
+
+/***Blog Posts Clickable picture links***/
+
+
+
+.blogPostContainer {
+	display:flex;
+	flex-wrap:wrap;
+    	position: relative;
+	max-width:1200px;
+	margin-left:auto;
+	margin-right:auto;
+    	font-family: Arial;
+	margin-top: 4em;
+    	margin-bottom: 4em;
+}
+
+.blogPost {
+	display:inline-block;
+	width: calc((100% - 192px)/3);
+	margin:2em;
+	text-align:center;
+	min-width:300px;
+	box-sizing:border-box;
+	bottom:0;
+	position:relative
+
+
+}
+
+.blogPost:hover {
+	opacity:0.8;
+
+}
+
+.blogPost img {
+	vertical-align: middle;
+	width:100%;
+}
+
+.content {
+
+	background: rgba(0, 0, 0, 0.5);
+	bottom: 0;
+	position:absolute;
+	width: 100%;
+	color:white;
+
+}
+
+.content > h3 {
+	margin-left:.5em;
+	margin-right:.5em;
+}
+.content > p {
+	margin: 1em;
+    	line-height: 1.3em;
+}
+
+
+@media screen and (max-width:450px) {
+	.blogPost {
+		width: calc((100% - 128px)/2);
+		max-width:400px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.content > h3 {
+		margin: .4em;
+	}
+	.content > p {
+		margin: .4em;
+	    	line-height: 1.3em;
+	}
+
+}
+
+@media screen and (min-width:451px) and (max-width:750px) {
+	.blogPost {
+		width: 80%;
+		max-width:500px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+
+	.content > h3 {
+		margin: 1em;
+    		line-height: 1.6em;
+	}
+	.content > p {
+		margin: 1em;
+    		line-height: 1.6em;
+	}
+}
+
+@media screen and (min-width:751px) and (max-width:1100px) {
+	.blogPostContainer {
+		max-width:730px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+}
+
+
+
+/***Blog Posts ***/
+
+
+/*end of landing page stuff */
+
+
+/*previous font family
+  font-family: 'Cormorant';
+*/
+
+#blog_post_date{
+  color:#aaa;
+  margin-bottom:1.7em;
+  margin-left: 0;
+}
+
+/*section specific for meet the team*/
+
+.meetTheTeamBlurb {
+  text-align: center;
+  margin-top: 3em;
+}
+
+.meetTheTeamBlurb p{
+  margin-bottom:4em;
+  text-align: center;
+  line-height: 1.5em;
+  max-width:1050px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+.columnforcards {
+	width:100%;
+	display:block;
+	margin-bottom: 16px;
+
+}
+
+.cardimage {
+	width:100%;
+	max-width:100%;
+}
+
+.carddescription {
+	clear:both;
+	padding: 0 16px 16px 16px;
+}
+
+.carddescription p {
+  line-height: 1.37em;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cardtitle {
+  margin-bottom:.6em;
+  color:#333333;
+  font-weight:600;
+}
+
+
+.rowforcards {
+
+
+	display:flex;
+	flex-wrap:wrap;
+}
+
+
+@media (min-width: 600px){
+
+.columnforcards {
+
+	float:left;
+	width:calc((100% - 80px)/2);
+	max-width:100%;
+	display:block;
+	margin-bottom: 16px;
+    	padding: 0 20px;
+
+	}
+
+}
+
+@media (min-width: 850px){
+
+.rowforcards {
+
+	max-width:1050px;
+	margin-left:auto;
+	margin-right:auto;
+	clear:both;
+	display:flex;
+	flex-wrap:wrap;
+}
+
+.columnforcards {
+
+
+	width:calc((100% - 120px)/3);
+	display:block;
+	margin-bottom: 20px;
+	margin-top: 20px;
+    	padding: 0 20px;
+	max-height:379px;
+	}
+
+}
+
+
+
+
+/*end of section specific for meet the team*/
