@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>3.1 Student Grades</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+
+
+
+
+
+
+
+<script>
+
+
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+
+
+
+function process()
+{
+
+var number1, number2, number3, number4, n1, n2, n3, reply, finalAverage, grade;
+
+number1 = document.forms["myform"].elements["homeworkAve"].value;
+number2 = document.forms["myform"].elements["MidTermAve"].value;
+number3 = document.forms["myform"].elements["FinalAve"].value;
+number4 = document.forms["myform"].elements["ACR"].value;
+
+n1 = parseInt(number1);
+n2 = parseInt(number2);
+n3 = parseInt(number3);
+n4 = parseInt(number4);
+
+
+	if(isNaN(n1) || n1<1 || n1> 100 ||isNaN(n2) || n2<1 || n2> 100 || isNaN(n3) || n3<1 || n3> 100 || isNaN(n4) || n4<1 || n4> 100) {
+
+		reply= "Input is not valid";
+		alert(reply);
+
+	} else {
+
+
+	finalAverage = ((.5 * n1) + (.2 * n2) + (.2 * n3) + (.1 * n4));
+	finalAverage = Math.round(finalAverage);
+	document.forms["myform"].elements["finalAverageScore"].value = finalAverage;
+
+		if(finalAverage <= 100 && finalAverage >= 90) {
+			document.forms["myform"].elements["Grade"].value = "A";
+			document.forms["myform"].elements["moreInfo"].value = "Great Work";
+			}
+		else if(finalAverage < 90 && finalAverage >= 80) {
+			document.forms["myform"].elements["Grade"].value = "B";
+			document.forms["myform"].elements["moreInfo"].value = "Good Job";
+			}
+		else if(finalAverage < 80 && finalAverage >= 70) {
+			document.forms["myform"].elements["Grade"].value = "C";
+			document.forms["myform"].elements["moreInfo"].value = "You passed";
+			}
+		else if(finalAverage < 70 && finalAverage >= 60) {
+			document.forms["myform"].elements["Grade"].value = "D";
+			document.forms["myform"].elements["moreInfo"].value = "Student must retake the course";
+			}
+		else if(finalAverage < 60 && finalAverage >= 0) {
+			document.forms["myform"].elements["Grade"].value = "F";
+			document.forms["myform"].elements["moreInfo"].value = "Student must retake the course";
+			}
+	}
+	
+
+}
+
+
+
+
+
+
+
+
+
+</script>
+
+<style> 
+#panel, #flip {
+    padding: 15px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+
+
+input {text-align: right;}
+body {background-color: #f5f5dc;}
+.body { width: 550px; margin: 0px auto;}
+
+
+table {
+	margin-top:1em;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="topnav" id="myTopnav">
+
+  <a href="hw3part1.html" 	onclick="myFunction()" class="active">Part 1</a>
+  <a href="hw3part2.html" 	onclick="myFunction()">Part 2</a>
+  <a href="hw3part3.html"	onclick="myFunction()">Part 3</a>
+  <a href="hw3part4.html"	onclick="myFunction()" >Part 4</a>
+  <a href="../jshw1/index.html"	onclick="myFunction()" >Home</a>
+
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+
+</div>
+
+
+<section class="body">
+	<h1>Student Grades</h1>
+
+<div id="flip">Click to show or hide instructions.</div>
+<div id="panel">The following webpage contains the heading, Student Grades, and uses a script that inputs a student's homework average, mid-term exam score, final exam score, and ACR (all as integers)'. Calculate the student's final average according to the formula: final average = (.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * ACR)</div>
+
+
+<form name="myform">
+<table>
+
+<tr>
+	<td>Homework Average(Number between 1 and 100)</td>
+	<td><input type="text" name="homeworkAve" size="26"></td>
+</tr>
+
+<tr>
+	<td>Mid Term Exam Score</td>
+	<td><input type="text" name="MidTermAve" size="26"></td>
+</tr>
+
+<tr>
+	<td>Final Exam Score</td>
+	<td><input type="text" name="FinalAve" size="26"></td>
+</tr>
+
+<tr>
+	<td>ACR</td>
+	<td><input type="text" name="ACR" size="26"></td>
+</tr>
+
+<tr>
+	<td>Student's Final Average</td>
+	<td><input type="text" name="finalAverageScore" size="26" readonly></td>
+</tr>
+
+<tr>
+	<td>Student's Final Grade</td>
+	<td><input type="text" name="Grade" size="26" readonly></td>
+</tr>
+	
+<tr>
+	<td>More Information</td>
+	<td><input type="text" name="moreInfo" size="26" readonly></td>
+</tr>
+
+
+</table>
+
+<br>
+
+<input type="button" onclick="process()" value="SUBMIT">
+<input type="reset" value="RESET">
+</form>
+</section>
+</body>

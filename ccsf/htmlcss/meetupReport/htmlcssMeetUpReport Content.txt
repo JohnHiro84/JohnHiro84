@@ -1,0 +1,65 @@
+MeetUp Report
+
+	Introduction to NodeJS - Rithm School
+
+	
+
+
+
+I have spent alot of time studying front end web development and I thought for my meetup I'd check out
+NodeJS which is used in the backend. The meetup I found was being put on my Rithm School here in 
+San Francisco called ((KnowNode - Introduction to NodeJS)).
+
+
+What are the objectives of this meetup group?
+
+Rithm School is one of the many different coding schools offered in San Francisco to become
+a developer. They have a 4 month program that goes through front end development with html, css and javascript.
+They also go through some full stack development with python, SQL and Flask and single page
+applications with React and NodeJS. They work with you to prep for interviews to hopefully get
+a developer position afterwards.
+
+They offer meetups for a variety of events; learning react, javascript, github and NodeJS.
+
+
+
+frequency they meet:
+	They meetup anywhere from every week, to every few weeks talking about
+	a range of subjects
+
+
+
+------------------------
+
+subject of the meeting you attended:
+
+The meetup I went to was [https://www.meetup.com/rithmschool/events/248902841/] to Know Node: An Intro to Node.js & Express
+
+
+
+We learned a little about NodeJS. NodeJS is a was to use javascript server side. 
+
+
+What did we learn:
+
+In the past javascript was primarily interpretted through browsers and still is, 
+yet in addition it can now run on the computer aside from the web browser. 
+NodeJS allows for javascript to be run on a
+server and return the content to the client.
+
+We ran a javascript file to listen for http requests on the localhost and made the request
+from the browser
+
+Learned a little about Express.js a javascript framework that makes it easier to make different routes.
+
+Made Urls dynamic with params
+Params are a way to pass different information from the browser 
+search bar into the nodejs javascript file variable
+
+when we type in localhost:3000/add/bobbyJoeBrown into the search bar
+the server will pass bobbyJoeBrown into the name variable that can be used
+in the js file later.
+
+ctrl or command + L, in a web browser quickly takes you to the address bar
+
+

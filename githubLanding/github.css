@@ -1,0 +1,49 @@
+
+/***Blog Posts Clickable picture links***/
+
+
+
+.blogPostContainer {
+	display:flex;
+	flex-wrap:wrap;
+    	position: relative;
+	max-width:1200px;
+	margin-left:auto;
+	margin-right:auto;
+    	font-family: Arial;
+	margin-top: 4em;
+    	margin-bottom: 4em;
+}
+
+.blogPost {
+	display:inline-block;
+	width: calc((100% - 192px)/3);
+	margin:2em;
+	text-align:center;
+	min-width:300px;
+	box-sizing:border-box;
+	bottom:0;
+	position:relative
+
+
+}
+
+.blogPost:hover {
+	opacity:0.8;
+
+}
+
+.blogPost img {
+	vertical-align: middle;
+	width:100%;
+}
+
+.content {
+
+	background: rgba(0, 0, 0, 0.5);
+	bottom: 0;
+	position:absolute;
+	width: 100%;
+	color:white;
+
+}

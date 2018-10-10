@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Homework 6.1</title>
+<meta charset="utf-8">
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">JavaScript Homework</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li ><a href="https://johnhiro84.github.io/JohnHiro84/ccsf/js/jshw1/index.html">Home</a></li>
+	      <li class="active"><a href="jshw6pt1bs.html">6.1</a></li>
+	      <li ><a href="jshw6pt2bs.html">6.2</a></li>
+	      <li ><a href="jshw6pt3bs.html">6.3</a></li>
+	    </ul>
+	  </div>
+	</nav>
+
+
+
+
+
+
+
+
+
+<form id="myForm">
+
+	<input type="number" id="myText" value="2" step=".0001">
+
+</form>
+
+<button onclick="myFunction()">Try it</button>
+
+
+<p>Click the button to change the value of the text field.</p>
+
+<p id="pp"></p>
+<textarea id="Area51" rows="17" cols="40">
+
+</textarea>
+
+
+
+<script>
+function myFunction() {
+
+	let InputNumberInit = document.forms["myForm"]["myText"].value;
+	let InputNumber = parseInt(InputNumberInit);
+
+
+	let NearestInteger = Math.round(InputNumber);
+
+	var sqRootNum = Math.round(Math.sqrt(InputNumber));
+
+	var near10th = (Math.round(InputNumber / 10) * 10);
+
+
+
+	//var near10th = InputNumber.toFixed(2);
+
+
+
+        
+	var near100th = (Math.round(InputNumber / 100) * 100);
+
+
+
+    
+	var near1000th = (Math.round(InputNumber / 1000) * 1000);
+    
+    	
+    
+	document.getElementById("Area51").innerHTML = "Original Inputted Number:  \n" + InputNumber.toString() + 
+	"\n\nRounded to Nearest Integer:  \n" + NearestInteger.toString() +
+    "\n\nSquare Root of the number then rounded: \n" + sqRootNum.toString() +
+    "\n\nInput number rounded to Nearest 10th Pl: \n" + near10th.toString() +
+    "\n\nInput number rounded to Nearest 100th Pl: \n" + near100th.toString()  +
+    "\n\nInput number rounded to Nearest 1000th Pl: \n" + near1000th.toString()+
+    "\n\nExperiment! Input number rounded to Nearest 10th Pl using toFixed(2): \n" ;
+
+
+}
+</script>
+
+</body>
+</html>
+

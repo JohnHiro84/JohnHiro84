@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Url Shortener Microservice</title>
+<style>
+
+html, body {
+  margin:0;
+  padding:0;
+}
+h1 {
+  color:green;
+}
+
+div {
+    width:500px;
+    margin: auto;
+}
+</style>
+
+</head>
+<body>
+
+<div>
+<h1>Webpage Shortening Service</h1>
+<p>This is a project from freecodecamp.</p>
+<p><a href="https://thread-paper.glitch.me/">Microservice - Url Shortener</a></p>
+<p>Enter a website in the form below with the format "www.google.com" to get a shortened version of the website</p>
+
+<form id="contact-form" method="POST" action="/createUrl">
+	<label for="origUrl">Webpage you want shortened:</label>
+    <br>
+	<input type="text" name = "origUrl"/>
+
+</form>
+
+<h2><a href ="http://localhost:3000/UrlShortener">http://localhost:3000/UrlShortener</a></h2>
+<p>The main entry point for the web shortening service</p>
+
+<h2><a href ="http://localhost:3000/findAllUrls">http://localhost:3000/findAllUrls</a></h2>
+<p>This entry point will show all the different short link Urls created</p>
+
+<h2><a href ="http://localhost:3000/findAllUrlsPretty/">http://localhost:3000/findAllUrlsPretty/
+</a></h2>
+<p>This entry point will show all the different short link Urls returned with an Ejs Template Engine</p>
+
+<h2><a href ="http://localhost:3000/shortUrl/32">http://localhost:3000/shortUrl/64</a></h2>
+<p>The shortened link will be in the above format.</p>
+<p>If you type this into your web browser you will be redirected to your webpage</p>
+
+
+<h2>http://localhost:3000/deleteAllUrls/</h2>
+<p>This entry point will delete all the weblinks created</p>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

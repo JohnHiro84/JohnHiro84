@@ -1,0 +1,126 @@
+
+
+
+body {
+
+	background-color:yellow;
+}
+
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: white;
+}
+
+h1 {
+	text-align:center;
+	color:red;
+}
+
+
+#de {
+	height:20px;
+}
+
+.spanFirstLetter {
+
+	font-size:3em;
+	font-weight:700;
+	font-style: italic;
+
+}
+
+h2 {
+	color:blue;
+	font-size:30px;
+	font-style: italic;
+	float:right;
+	clear:both;
+}
+
+p {
+	float:left;
+	clear:both;
+
+
+}
+
+.spanRed {
+	color:red;
+}
+
+h3 {
+	float:right;
+	clear:both;
+	color:red;
+}
+
+table {
+	clear:both;
+	background-color: cyan;
+	padding:10px;
+	text-align:center;
+
+}
+
+tr, td {
+	padding:10px;
+}
+
+td:first-child {
+	font-weight:700;
+}
+
+#cyanToGreen {
+
+	animation: colorChange 10s forwards;
+}
+
+#blackToWhite {
+	animation: colorChange2 10s forwards;
+}
+
+
+#banner {
+    width: 220px;
+    height: 50px;
+    text-align:center;
+    font-weight:700;
+    color:white;
+    background: red;
+    position: relative;
+    animation: mymove 5s infinite;
+    animation-direction: alternate;
+    margin:0;
+    padding:0;
+    top:50px;
+    position:fixed;
+
+
+}
+
+#banner > p {
+	float:none;
+
+}
+
+
+
+@keyframes colorChange {
+	from {background-color:cyan;}
+	to {background-color:green;}
+}
+
+@keyframes colorChange2 {
+	from {color:black;}
+	to {color:white;}
+}
+
+
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: calc((100% - 220px));}
+}

@@ -1,0 +1,72 @@
+html, body {
+	margin:0;
+	padding:0;
+}	
+
+h1, h2, h3, h4 {
+	font-family: 'Roboto', sans-serif;
+}
+
+h4 {
+
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	text-align:justify;
+}
+
+li {
+	font-family: 'Open Sans', sans-serif;
+	text-align:left;
+}
+body {
+	background-color:#f0f0f5;
+}
+#content {
+	background-color:white;
+	margin-left:auto;
+	margin-right:auto;
+	max-width:800px;
+	text-align:center;
+	line-height:1.8rem;
+	padding:2em;
+	padding-top:5em;
+}
+
+#content > h1 {
+	margin-top:0;
+
+}
+
+#highlightSchool{
+	font-weight:700;
+	color: #000099;
+}
+
+#fillerPic {
+	width:700px;
+	display:block;
+	margin-left: auto;
+    	margin-right: auto;
+}
+#avatar {
+	display:inline-block;
+	border-radius: 50%;
+	width:50px;
+	height:50px;
+}
+
+h4 {
+	display:inline-block;
+	position:relative;
+	bottom:16px;
+	margin:0;
+	padding-left:16px;
+	text-align:left;
+}
+
+#AY {
+	font-size:1.14em;
+	color:#3333ff;
+}
