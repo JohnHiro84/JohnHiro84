@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Our Services</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="OurServices.css" />
+  <link rel="stylesheet" href="../CssStylingNewIndexPage.css" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<!--pop up side navigation responsive screen-->
+  <nav id="drawer" class="responsiveNav">
+    <ul class="nav__list">
+    <li class="navitemResponsive"><a href="meetTheTeam.html">About Us</a></li>
+    <li class="navitemResponsive"><a href="OurServices.html">Services</a></li>
+    <li class="navitemResponsive"><a href="philantrophypage.html">Philantrophy</a></li>
+    <li class="navitemResponsive"><a href="blogArticles/blogArticleInternetTop10.html">Blog</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+
+<div class='navBarWrapper'>
+<img id="headerpic" src="../images/logoA.svg">
+  <ul class="nav_bar">
+
+    <li class="navBarTitle"><span ><a href="../index.html">Achievement</span></a></li>
+    <li class="navitem"><a href="meetTheTeam.html">About Us</a></li>
+    <li class="navitem"><a href="OurServices.html">Services</a></li>
+    <li class="navitem"><a href="philantrophypage.html">Philantrophy</a></li>
+    <li class="navitem"><a href="blogArticles/blogArticleInternetTop10.html">Blog</a></li>
+    <span class="span_icon"><i id="menu" class="fas fa-bars fa-2x" aria-hidden="true"></i></span>
+
+  </ul>
+</div>
+
+
+<section>
+
+
+<section class="meetTheTeamBlurb">
+
+<h1>Services</h1>
+<p>We offer services to help us tackle your web and marketing projects. With over 5 years in the business we pride ourselves
+in getting your project taken care of within our estimated projection.
+If you have a project that you need help with, reach out to us and we can talk about the scope of the project and pricing.
+</p>
+
+</section>
+
+<section>
+
+<div class="container">
+	<div class="content1">
+		<img class="cardimage" src="../images/services/webdev.jpeg" alt="a man">
+	</div>
+	<div class="content2text" id="content2textID">
+		<h2>Web Development</h2>
+		<p>Achievement Media Group develops websites and mobile smartphone applications
+		across iPhone, Android and other platforms. We constantly stay up to
+		date with the latest technologies to ensure your website is responsive
+		across different devices, fast and reliable. We'll work to get you a
+		web site and/or application that you're excited about.</p>
+	</div>
+
+</div>
+
+<div class="containerA">
+	<div class="container2" >
+		<div class="content3">
+			<img class="cardimage" src="../images/services/marketing.jpeg" alt="a man">
+		</div>
+		<div class="content4text" id="content4textID">
+			<h2>Digital Marketing</h2>
+			<p>Here at Achievement media, we combine digitial marketing with older traditional marketing efforts. We've successfully
+			helped many fortune 500 companies with thier social media campaigns by using some of the state of the art data
+			analytics to help you reach your target audience with a high return on investment.</p>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="content5">
+		<img class="cardimage" src="../images/services/graphic.jpg" alt="a man">
+	</div>
+	<div class="content6text" id="content6textID">
+		<h2>Graphic Design</h2>
+          	<p>We have a team of in house and contractors who are masters of graphic design and illustration. From developing
+		content for webpages, to logo design and branding we can even help with most anything you can think.</p>
+
+	</div>
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+<footer class="footer">
+
+  <ul id='socialMediaIcons'>
+    <img id="footerpic" src="../images/logoA.svg"">
+<br>
+    <i class="fab fa-facebook-square fa-2x"></i>
+    <i class="fab fa-twitter-square fa-2x"></i>
+    <i class="fab fa-github-square fa-2x"></i>
+    <i class="fab fa-linkedin fa-2x"></i>
+    <i class="fab fa-instagram fa-2x"></i>
+
+  </ul>
+
+  <ul>
+<li><h2 class="footerCompanyName">Achievement Media</h2></li>
+<li><p class="footerCompanyName">2018 Brought to you by the Achievement Media
+  Group based in San Francisco, California</p></li>
+
+  </ul>
+
+  <ul>
+    <li><h3 class="footerh3">Who We Are</h3></li>
+    <li><a href="meetTheTeam.html">About Us</a></li>
+    <li><a href="OurServices.html">Services</a></li>
+    <li><a href="philantrophypage.html">Philantrophy</a></li>
+    <li><a href="blogArticles/blogArticleInternetTop10.html">Blog</a></li>
+  </ul>
+
+
+</footer>
+
+
+
+</main>
+
+
+
+<script>
+
+      /*
+       * Open the drawer when the menu icon is clicked.
+       */
+      var menu = document.querySelector('#menu');
+      var main = document.querySelector('main');
+      var drawer = document.querySelector('#drawer');
+
+      menu.addEventListener('click', function(e) {
+        drawer.classList.toggle('open');
+        e.stopPropagation();
+      });
+      main.addEventListener('click', function() {
+        drawer.classList.remove('open');
+      });
+
+</script>
+
+
+</body>
+</html>
+
+
+<!--- ---><!--- --->
