@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Fruit Harvester</title>
+<link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' />
+<style>
+body {
+  padding:0;
+  margin:0;
+  background:#666;
+}
+canvas {
+  display:block;
+  margin:30px auto 0;
+  border:1px dashed #ccc;
+  background:#000;
+}
+</style>
+<script>
+//setting the sound effects
+var slurp = document.createElement("audio");
+slurp.src = "./sfx/slurp.wav";
+
+var flower = document.createElement("audio");
+flower.src = "./sfx/flowergrower.wav";
+
+var ouch = document.createElement("audio");
+ouch.src = "./sfx/Whsiup.wav";
+
+
+var canvas,
+    ctx,
+    width = 360,
+    height = 360,
+
+    //fruits
+    fruitTotal = 5,
+    fruits = [],
+    fruit_x = 50,
+    fruit_y = -45,
+    fruit_w = 50,
+    fruit_h = 50,
+    fruit_speed = 4,
+    fruit,
+
+    //rottenfruits
+    rottenTotal = 5,
+    rottens = [],
+    rotten_x = 50,
+    rotten_y = -45,
+    rotten_w = 50,
+    rotten_h = 50,
+    rotten_speed = 2,
+    rotten,
+
+    //speed boost pickup item
+    boostTotal = 1,
+    boosts = [],
+    boost_x = 50,
+    boost_y = -45,
+    boost_w = 50,
+    boost_h = 50,
+    boost_speed = 6,
+
+    //controls and basket
+    rightKey = false,
+    leftKey = false,
+    upKey = false,
+    downKey = false,
+    basket,
+    basket_x = (width / 2) - 25, basket_y = height - 75, basket_w = 70, basket_h = 43,
+    score = 0,
+    timer = 0,
+    alive = true,
+    lives = 3,
+    tree,
+    basket_speed = 5,
+    // starX = 0, starY = 0, starY2 = -600,
+    starX = 0, starY = 0, starX2 = 360,
+    treeX = 0, treeY = 0,
+    gameStarted = false;
+
+// Array to hold all the initial fruits on screen
+for (var i = 0; i < fruitTotal; i++) {
+ // fruits.push([fruit_x, fruit_y, fruit_w, fruit_h, fruit_speed]);
+ // fruit_x += fruit_w + 60;
+ fruits.push([(Math.random() * 340) + 50, (Math.random() * -45), fruit_w, fruit_h, fruit_speed]);
+
+}
+
+//Clears the canvas so it can be updated
+function clearCanvas() {
+ ctx.clearRect(0,0,width,height);
+}
+
+//Cycles through the array and draws the updated fruit position
+function drawFruits() {
+ for (var i = 0; i < fruits.length; i++) {
+   ctx.drawImage(fruit, fruits[i][0], fruits[i][1]);
+ }
+}
+
+function drawRottens() {
+ for (var i = 0; i < rottens.length; i++) {
+   ctx.drawImage(rotten, rottens[i][0], rottens[i][1]);
+ }
+}
+function drawBoosts() {
+ for (var i = 0; i < boosts.length; i++) {
+   ctx.drawImage(boost, boosts[i][0], boosts[i][1]);
+ }
+}
+
+//If an arrow key is being pressed, moves the basket in the right direction
+function drawBasket() {
+  if (rightKey) basket_x += basket_speed;
+  else if (leftKey) basket_x -= basket_speed;
+  if (upKey) basket_y -= basket_speed;
+  else if (downKey) basket_y += basket_speed;
+  if (basket_x <= 0) basket_x = 0;
+  if ((basket_x + basket_w) >= width) basket_x = width - basket_w;
+  if (basket_y <= 0) basket_y = 0;
+  if ((basket_y + basket_h) >= height) basket_y = height - basket_h;
+  ctx.drawImage(basket, basket_x, basket_y);
+}
+
+// This moves the fruits downwards on the canvas and if one passes the bottom of
+// the canvas, it moves it to above the canvas
+function moveFruits() {
+  for (var i = 0; i < fruits.length; i++) {
+   if (fruits[i][1] < height) {
+     fruits[i][1] += fruits[i][4];
+   } else if (fruits[i][1] > height - 1) {
+      fruits[i][1] = -45;
+    }
+  }
+}
+
+//rotten fruit fall just like regular fruit, but do not move back to the top of
+//the canvas once it hits the bottom
+function moveRottens() {
+  for (var i = 0; i < rottens.length; i++) {
+   if (rottens[i][1] < height) {
+     rottens[i][1] += rottens[i][4];
+   } else if (rottens[i][1] > height - 1) {
+      rottens[i][1] = -45;
+      rottens.splice(i, 1);
+    }
+  }
+}
+
+function moveBoosts() {
+  for (var i = 0; i < boosts.length; i++) {
+   if (boosts[i][1] < height) {
+     boosts[i][1] += boosts[i][4];
+   } else if (boosts[i][1] > height - 1) {
+      boosts[i][1] = -45;
+      boosts.splice(i, 1);
+    }
+  }
+}
+
+//this function checks to see if the player's basket collides with any of the fruits
+function basketCollision() {
+  var basket_xw = basket_x + basket_w,
+      basket_yh = basket_y + basket_h;
+  for (var i = 0; i < fruits.length; i++) {
+   if (basket_x > fruits[i][0] && basket_x < fruits[i][0] + fruit_w && basket_y > fruits[i][1] && basket_y < fruits[i][1] + fruit_h) {
+     fruits.splice(i, 1);
+     score += 1;
+     fruits.push([(Math.random() * 275) + 50, -45, fruit_w, fruit_h, ((Math.random() *4) + 3)]);
+     slurp.play();
+    }
+    if (basket_xw < fruits[i][0] + fruit_w && basket_xw > fruits[i][0] && basket_y > fruits[i][1] && basket_y < fruits[i][1] + fruit_h) {
+      fruits.splice(i, 1);
+      score += 1;
+      fruits.push([(Math.random() * 275) + 50, -45, fruit_w, fruit_h, ((Math.random() *4) + 3)]);
+      slurp.play();
+    }
+    if (basket_yh > fruits[i][1] && basket_yh < fruits[i][1] + fruit_h && basket_x > fruits[i][0] && basket_x < fruits[i][0] + fruit_w) {
+      fruits.splice(i, 1);
+      score += 1;
+      fruits.push([(Math.random() * 275) + 50, -45, fruit_w, fruit_h, ((Math.random() *4) + 3)]);
+       slurp.play();
+    }
+    if (basket_yh > fruits[i][1] && basket_yh < fruits[i][1] + fruit_h && basket_xw < fruits[i][0] + fruit_w && basket_xw > fruits[i][0]) {
+      fruits.splice(i, 1);
+      score += 1;
+      fruits.push([(Math.random() * 275) + 50, -45, fruit_w, fruit_h, ((Math.random() *4) + 3)]);
+      slurp.play();
+    }
+  }
+}
+
+//this function checks to see if the player's basket collides with a speed boost icon
+function boostCollision() {
+  var basket_xw = basket_x + basket_w,
+      basket_yh = basket_y + basket_h;
+  for (var i = 0; i < boosts.length; i++) {
+   if (basket_x > boosts[i][0] && basket_x < boosts[i][0] + fruit_w && basket_y > boosts[i][1] && basket_y < boosts[i][1] + fruit_h) {
+     boosts.splice(i, 1);
+     basket_speed += 2;
+     flower.play();
+     return;
+    }
+    if (basket_xw < boosts[i][0] + fruit_w && basket_xw > boosts[i][0] && basket_y > boosts[i][1] && basket_y < boosts[i][1] + fruit_h) {
+      boosts.splice(i, 1);
+      basket_speed += 2;
+      flower.play();
+     return;
+    }
+    if (basket_yh > boosts[i][1] && basket_yh < boosts[i][1] + fruit_h && basket_x > boosts[i][0] && basket_x < boosts[i][0] + fruit_w) {
+      boosts.splice(i, 1);
+      basket_speed += 2;
+      flower.play();
+     return;
+    }
+    if (basket_yh > boosts[i][1] && basket_yh < boosts[i][1] + fruit_h && basket_xw < boosts[i][0] + fruit_w && basket_xw > boosts[i][0]) {
+      boosts.splice(i, 1);
+      basket_speed += 2;
+      flower.play();
+     return;
+    }
+  }
+}
+
+
+//this function checks to see if the player's basket collides with any of the fruits
+function rottenCollision() {
+  var basket_xw = basket_x + basket_w,
+      basket_yh = basket_y + basket_h;
+  for (var i = 0; i < rottens.length; i++) {
+   if (basket_x > rottens[i][0] && basket_x < rottens[i][0] + rotten_w && basket_y > rottens[i][1] && basket_y < rottens[i][1] + rotten_h) {
+     rottens.splice(i, 1);
+     score -= 30;
+     ouch.play();
+     return;
+    }
+    if (basket_xw < rottens[i][0] + rotten_w && basket_xw > rottens[i][0] && basket_y > rottens[i][1] && basket_y < rottens[i][1] + rotten_h) {
+      rottens.splice(i, 1);
+      score -= 30;
+      ouch.play();
+      return;
+    }
+    if (basket_yh > rottens[i][1] && basket_yh < rottens[i][1] + rotten_h && basket_x > rottens[i][0] && basket_x < rottens[i][0] + rotten_w) {
+      rottens.splice(i, 1);
+      score -= 30;
+      ouch.play();
+      return;
+    }
+    if (basket_yh > rottens[i][1] && basket_yh < rottens[i][1] + rotten_h && basket_xw < rottens[i][0] + rotten_w && basket_xw > rottens[i][0]) {
+      rottens.splice(i, 1);
+      score -= 30;
+      ouch.play();
+      return;
+    }
+  }
+}
+
+//This simply resets the basket and fruits to their starting positions
+function reset() {
+  var fruit_reset_x = 50;
+  basket_x = (width / 2) - 25, basket_y = height - 75, basket_w = 50, basket_h = 57;
+  for (var i = 0; i < fruits.length; i++) {
+   fruits[i][0] = fruit_reset_x;
+   fruits[i][1] = -45;
+   fruit_reset_x = fruit_reset_x + fruit_w + 60;
+ }
+}
+
+//After the player loses all their lives, the continue button is shown and if clicked, it resets the game and removes the event listener for the continue button
+function continueButton(e) {
+ var cursorPos = getCursorPos(e);
+ if (cursorPos.x > (width / 2) - 53 && cursorPos.x < (width / 2) + 47 && cursorPos.y > (height / 2) + 10 && cursorPos.y < (height / 2) + 50) {
+   alive = true;
+    lives = 3;
+    timer = 0;
+    score = 0;
+    basket_speed = 5;
+    reset();
+    canvas.removeEventListener('click', continueButton, false);
+  }
+}
+
+//holds the cursors position
+function cursorPosition(x,y) {
+  this.x = x;
+  this.y = y;
+}
+
+//finds the cursor's position after the mouse is clicked
+function getCursorPos(e) {
+  var x;
+  var y;
+  if (e.pageX || e.pageY) {
+    x = e.pageX;
+    y = e.pageY;
+  } else {
+    x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+    y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+  }
+  x -= canvas.offsetLeft;
+  y -= canvas.offsetTop;
+  var cursorPos = new cursorPosition(x, y);
+  return cursorPos;
+}
+
+//Draws the text for the score and lives on the canvas and if the player runs out of lives, it's draws the game over text and continue button as well as adding the event listener for the continue button
+function scoreTotal() {
+
+  ctx.fillStyle = 'black';
+  ctx.fillRect(5, 5,105,60);
+
+
+  ctx.font = 'bold 20px VT323';
+  ctx.fillStyle = 'white';
+  ctx.fillText('Score: ', 10, 55);
+  ctx.fillText(score, 70, 55);
+  ctx.fillText('Timer: ', 10, 30);
+  ctx.fillText(timer.toFixed(0), 70, 30);
+  ctx.fillStyle = 'black';
+
+  if (!gameStarted) {
+    ctx.font = 'bold 46px VT323';
+    ctx.fillText('Fruit Harvester', width / 2 - 150, height / 2);
+    ctx.font = 'bold 20px VT323';
+    ctx.fillText('Click to Play', width / 2 - 56, height / 2 + 30);
+    ctx.fillText('Use arrow keys to move', width / 2 - 100, height / 2 + 60);
+    ctx.fillText('Catch as many fruits in 60 seconds', width / 2 - 150, height / 2 + 90);
+    ctx.fillText('Avoid rotten red fruit', width / 2 - 100, height / 2 + 120);
+  }
+  if (!alive) {
+    ctx.fillText('Game Over!', 245, height / 2);
+    ctx.fillRect((width / 2) - 60, (height / 2) + 10,100,40);
+    ctx.fillStyle = 'white';
+    ctx.fillText('Continue?', 250, (height / 2) + 35);
+    canvas.addEventListener('click', continueButton, false);
+  }
+  if(timer > 60){
+    lives = 0;
+    ctx.fillStyle = 'white';
+
+    ctx.fillText(`You caught ${score} fruits!`, 100, height / 2);
+    ctx.fillStyle = 'black';
+
+    ctx.fillRect(130, (height / 2) + 10,120,40);
+    ctx.fillStyle = 'white';
+    ctx.fillText('Continue?', 145, (height / 2) + 35);
+    canvas.addEventListener('click', continueButton, false);
+  }
+
+  // the following adds speed boosts in intervals
+  if(timer > 10 && timer < 10.4 && boosts.length < 1){
+    boosts.push([(Math.random() * 275) + 50, (Math.random() * -45), boost_w, boost_h, boost_speed]);
+  }
+  if(timer > 30 && timer < 30.4 && boosts.length < 1){
+    boosts.push([(Math.random() * 275) + 50, (Math.random() * -45), boost_w, boost_h, boost_speed]);
+  }
+  if(timer > 50 && timer < 50.4 && boosts.length < 1){
+    boosts.push([(Math.random() * 275) + 50, (Math.random() * -45), boost_w, boost_h, boost_speed]);
+  }
+
+
+  //adds rotten fruit in intervals
+  if(timer > 3 && timer < 3.04 && rottens.length < 3){
+    rottens.push([(Math.random() * 275) + 50, -45, rotten_w, rotten_h, ((Math.random() * 2) + 2)]);
+    rottens.push([(Math.random() * 275) + 50, -45, rotten_w, rotten_h, ((Math.random() * 2) + 2)]);
+
+  }
+  if(timer > 10 && timer < 10.04 && rottens.length < 1){
+    rottens.push([(Math.random() * 275) + 50, -45, rotten_w, rotten_h, ((Math.random() * 2) + 2)]);
+    rottens.push([(Math.random() * 275) + 50, -45, rotten_w, rotten_h, ((Math.random() * 2) + 2)]);
+
+  }
+  if(timer > 20 && timer < 21.5 && rottens.length < 3){
+    rottens.push([(Math.random() * 275) + 50, -45, rotten_w, rotten_h, ((Math.random() * 2) + 2)]);
+    rottens.push([(Math.random() * 275) + 50, -45, rotten_w, rotten_h, ((Math.random() * 2) + 2)]);
+  }
+  if(timer > 43 && timer < 44.04 && rottens.length < 4){
+    rottens.push([(Math.random() * 275) + 50, -45, rotten_w, rotten_h, ((Math.random() * 2) + 2)]);
+    rottens.push([(Math.random() * 275) + 50, -45, rotten_w, rotten_h, ((Math.random() * 2) + 2)]);
+
+  }
+  if(timer > 54 && timer < 54.04 && rottens.length < 2){
+    rottens.push([(Math.random() * 275) + 50, -45, rotten_w, rotten_h, ((Math.random() * 2) + 2)]);
+    rottens.push([(Math.random() * 275) + 50, -45, rotten_w, rotten_h, ((Math.random() * 2) + 2)]);
+
+  }
+
+
+  // the following adds waves of increased fruits on the screen
+  // at certain time intervals
+  if(timer > 3 && timer < 3.04){
+    fruits.push([(Math.random() * 275) + 50, -45, fruit_w, fruit_h, ((Math.random() *4) + 3)]);
+    fruits.push([(Math.random() * 275) + 50, -45, fruit_w, fruit_h, ((Math.random() *4) + 3)]);
+  }
+
+  if(timer > 15 && timer < 15.2){
+    fruits.push([(Math.random() * 275) + 50, -45, fruit_w, fruit_h, ((Math.random() *4) + 3)]);
+  }
+    if(timer > 30 && timer < 30.2){
+
+    fruits.push([(Math.random() * 275) + 50, -45, fruit_w, fruit_h, ((Math.random() *4) + 3)]);
+  }
+  if(timer > 45 && timer < 45.5){
+    fruits.push([(Math.random() * 275) + 50, -45, fruit_w, fruit_h, ((Math.random() *4) + 3)]);
+  }
+}
+
+//Draws the background
+function drawBackground() {
+  ctx.drawImage(tree,treeX,treeY);
+
+}
+
+//The initial function called when the page first loads.
+//Loads the basket, fruit and tree background images and adds the
+// event listeners for the arrow keys. It then calls the gameLoop function.
+function init() {
+  canvas = document.getElementById('canvas');
+  ctx = canvas.getContext('2d');
+  fruit = new Image();
+  fruit.src = './sprites/orange-happy.png';
+  basket = new Image();
+  basket.src = './sprites/newbasket3.png';
+  boost = new Image();
+  boost.src = './sprites/speed_boost.png';
+  rotten = new Image();
+  rotten.src = './sprites/red-sad.png'
+  tree = new Image();
+  tree.src = 'tree-small.png';
+  document.addEventListener('keydown', keyDown, false);
+  document.addEventListener('keyup', keyUp, false);
+  canvas.addEventListener('click', gameStart, false);
+  gameLoop();
+}
+
+function gameStart() {
+  gameStarted = true;
+  canvas.removeEventListener('click', gameStart, false);
+  var main_music = document.createElement("audio");
+  main_music.src = "./sfx/music2.mp3";
+  main_music.play();
+  main_music.loop = true;
+
+}
+
+//The main function of the game, it calls all the other functions needed to make the game run
+function gameLoop() {
+  clearCanvas();
+  drawBackground()
+
+  if (alive && gameStarted && lives > 0) {
+    basketCollision();
+    boostCollision();
+    rottenCollision();
+    moveRottens();
+    drawRottens();
+    moveFruits();
+    drawFruits();
+    moveBoosts();
+    drawBoosts();
+    drawBasket();
+    timer = timer + 1/30;
+  }
+
+  if (score < 0 ){
+    score = 0;
+  }
+  scoreTotal();
+
+  game = setTimeout(gameLoop, 1000 / 30);
+}
+
+//Checks to see which key has been pressed and either to move the basket
+function keyDown(e) {
+  if (e.keyCode == 39) rightKey = true;
+  else if (e.keyCode == 37) leftKey = true;
+  if (e.keyCode == 38) upKey = true;
+  else if (e.keyCode == 40) downKey = true;
+}
+
+//Checks to see if a pressed key has been released and stops the baskets movement if it has
+function keyUp(e) {
+  if (e.keyCode == 39) rightKey = false;
+  else if (e.keyCode == 37) leftKey = false;
+  if (e.keyCode == 38) upKey = false;
+  else if (e.keyCode == 40) downKey = false;
+}
+window.onload = init;
+</script>
+</head>
+
+<body>
+  <canvas id="canvas" width="360" height="360"></canvas>
+</body>
+</html>
