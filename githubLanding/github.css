@@ -28,6 +28,10 @@
 
 }
 
+iframe {
+	margin: 2em;
+}
+
 .blogPost:hover {
 	opacity:0.8;
 
