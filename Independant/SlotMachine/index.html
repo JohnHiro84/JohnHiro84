@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="./css/universal-screen.css">
+	<link rel="stylesheet" type="text/css" href="./css/flashing_panels.css">
+	<link rel="stylesheet" type="text/css" href="./css/panel_pictures.css">
+  <meta name='viewport' content="width=device-width, initial-scale=1.0">
+	<title>Slot Machine!</title>
+ 	<meta charset="UTF-8">
+
+</head>
+
+<body>
+
+<div class= "flex-container">
+
+  <!-- top row -->
+  <div class="flex-child" id="top-child">
+    <p></p>
+  </div>
+
+  <!-- money display -->
+  <div class="flex-child money-child">
+
+    <p class="your-money">Your Money:</p>
+
+		<p class='money'>$<span id="money-display">10000</span></p>
+
+		<span id="bet">Bet:</span>
+
+		<p id="your-bet"><input type="number" id="bet-amount" name="" value="100"></p>
+  </div>
+
+
+  <!-- panels display -->
+  <div class="flex-child panel-child" id="panel-container">
+
+		<div class="panel-starting-color" id="panel1">
+    </div>
+
+		<div class="panel-starting-color" id="panel2">
+		</div>
+
+		<div class="panel-starting-color" id="panel3">
+		</div>
+  </div>
+
+	<!-- lever display -->
+  <div class="flex-child" id="lever-child">
+    <button type="button" name="button" id="button-lever" onclick="spin()">Pull!</button>
+    <p></p>
+  </div>
+
+  <!-- message box -->
+  <div class="flex-child messege-child">
+    <p id="messege-box"></p>
+  </div>
+
+</div>
+
+<script type="text/javascript" src="./javascript.js">
+</script>
+
+
+</body>
+</html>

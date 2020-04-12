@@ -1,0 +1,8 @@
+//turn off button
+//sfx
+
+////lever pull     000
+///mild success    07
+//big success      16
+//jackpot	
+//raining coins
