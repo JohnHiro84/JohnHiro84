@@ -1,0 +1,36 @@
+
+
+.panel-starting-color {
+  background-color: yellow;
+}
+
+.panel {
+  background-color: red;
+}
+.panel-flash-active{
+  -webkit-animation: colorchange 4s infinite alternate;
+}
+
+@-webkit-keyframes colorchange {
+
+  0% {
+    background-color: orange;
+  }
+  20%{
+    background-color: yellow;
+  }
+  40%{
+    background-color: orange;
+  }
+  60%{
+    background-color: yellow;
+  }
+  80%{
+    background-color: orange;
+  }
+  100%{
+    background-color: yellow;
+  }
+
+
+}
