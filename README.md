@@ -1,7 +1,7 @@
 # JohnHiro84
 
 This is my github pages project showcasing 
-Different projects I've done in the past.
+different projects I've done in the past.
 
 Most recently I finished App Academy's
 curriculum. In the past I've completed courses
@@ -13,3 +13,4 @@ Node and express).
 
 
 https://johnhiro84.github.io/JohnHiro84/
+
