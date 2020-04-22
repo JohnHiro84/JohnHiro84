@@ -1,0 +1,8 @@
+Var balancedStringSplit = function(s){
+  let k =0,num=0;
+  for(i in s){
+    (s[i] === "L") ? k--:k++
+    (k===0) ? num++:""
+  }
+  return num;
+}
