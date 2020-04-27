@@ -1,0 +1,59 @@
+
+function sentenceSplitter(phrase) {
+  let words = phrase.split(" ");
+  console.log(words);
+  return words;
+}
+
+
+function lengthChecker(array) {
+  let longest = "";
+  for(i in array) {
+    if (array[i].length > longest.length){
+      longest = array[i];
+    }
+  }
+  console.log(longest);
+  return longest;
+}
+function palindromeCheck(words){
+  let array_of_p = [];
+
+  for(i in words) {
+
+    for(j in words[i]){
+
+      let recentword = words[i];
+      let endindex = (recentword.length -1 - j);
+
+      if (j > endindex || (j === endindex && recentword[j] === recentword[endindex])) {
+        array_of_p.push(recentword);
+        break;
+
+      } else if(recentword[j] === recentword[endindex]) {
+  
+      } else {
+
+        break;
+      }
+
+    }
+  }
+  console.log("palindromes" + array_of_p);
+  return array_of_p;
+}
+
+
+function findLongestPalindrome(sentence) {
+
+  let words = sentenceSplitter(sentence);
+  console.log("words" + words);
+  palindromes = palindromeCheck(words);
+  console.log(palindromes);
+  lengthChecker(palindromes);
+}
+
+
+findLongestPalindrome("hi there neighbor");
+
+findLongestPalindrome("aya yitiy asdfdsa hi there");
