@@ -1,0 +1,14 @@
+
+var decompressRLElist = function(nums) {
+   let output = [];
+   for(i=0;i<nums.length;i+=2){
+      let times = nums[i];
+      let j = 0;
+
+      while(j < times){
+        output.push(nums[i+1]);
+        j++;
+      }
+    }
+    return output;
+};
