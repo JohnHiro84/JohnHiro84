@@ -1,0 +1,16 @@
+
+var rangeSumBST = function(root, L, R) {
+   if(root === undefined) return 0;
+   if(!root) return 0;
+   let sum = 0;
+   let queue =[root];
+
+   while(queue.length){
+     let node = queue.shift();
+     (node.val >= L && node.val <= R) ? sum+= node.val : sum+=0
+     if(node.left) queue.push(node.left);
+     if(node.right) ;
+   }
+
+   return sum;
+};
