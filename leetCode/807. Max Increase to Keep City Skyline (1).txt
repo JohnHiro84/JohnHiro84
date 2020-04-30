@@ -1,0 +1,123 @@
+// 807. Max Increase to Keep City Skyline
+//
+//
+//
+// grid[i][j]
+// each value represents skyline
+// viewed from top, bottom, left, right
+//
+//
+// ex1
+// input:
+//                [9,4,8,7]
+//
+//   grid =  8   [[3,0,8,4],
+//           7    [2,4,5,7],
+//           9    [9,2,6,3],
+//           3    [0,3,1,0]]
+//   output: 35
+//
+// Viewed from the top/bottom [9,4,8,7]
+// Viewed from left or right  [8,7,9,3]
+//
+//                 [9,4,8,7]
+//
+// grid new = 8    [8,4,8,7]
+//            7    [7,4,7,7]
+//            9    [9,4,8,7]
+//            3    [3,3,3,3]
+////////////////////////////////
+//smaller of the two values
+grid[0][0]
+    [1][0]
+    [2][0]
+    [3][0]
+
+function findTheGreats(grid){
+  let arrayYaxis = [];
+  let arrayXaxis = [];
+  for(i in grid){
+
+    let currentGreatY = 0;
+    let currentGreatX = 0;
+
+    for(j in grid[i]){
+
+      //finding the greats on the Y axis
+      if(grid[i][j] > currentGreatY){
+
+        currentGreatY = grid[i][j];
+      }
+      //finding the greats on the X axis
+      if(grid[j][i] > currentGreatX){
+
+        currentGreatX = grid[j][i];
+      }
+
+    }
+    arrayYaxis.push(currentGreatY);
+    arrayXaxis.push(currentGreatX);
+
+  }
+
+  return [arrayXaxis, arrayYaxis];
+}
+
+grid = [[3,0,8,4], [2,4,5,7], [9,2,6,3], [0,3,1,0]]
+// findTheGreats(grid);
+
+//                 [9,4,8,7]
+
+// grid new = 8    [8,4,8,7]
+//            7    [7,4,7,7]
+//            9    [9,4,8,7]
+//            3    [3,3,3,3]
+////////////////////////////////
+
+var maxIncreaseKeepingSkyline = function(grid){
+  let theGreats = findTheGreats(grid);
+  let xAxis = theGreats[0];
+  let yAxis = theGreats[1];
+  let newXarray = [];
+  let newGrid = [];
+
+  for(j in yAxis){
+    for(i in xAxis){
+      newXarray.push(Math.min(xAxis[i], yAxis[j]));
+    }
+    newGrid.push(newXarray);
+    newXarray = [];
+  }
+  return newGrid;
+}
+maxIncreaseKeepingSkyline(grid);
+
+
+///////////////////////////////////////////////////////shorter version
+
+//                 [9,4,8,7]
+
+// grid new = 8    [8,4,8,7]
+//            7    [7,4,7,7]
+//            9    [9,4,8,7]
+//            3    [3,3,3,3]
+
+var maxIncreaseKeepingSkyline = function(grid){
+  // let output = []
+  let sum = 0;
+  for(i in grid){
+    let yGreat;
+    let xGreat = Math.max.apply(0, grid[i]);
+    // let newX = [];
+
+    for(j in grid[i]){
+      yGreat = Math.max(grid[0][j], grid[1][j], grid[2][j], grid[3][j]);
+      // newX.push(Math.min(xGreat, yGreat));
+      sum = sum + Math.abs(Math.min(xGreat, yGreat) - grid[i][j]);
+
+    // output.push(newX);
+    }
+  }
+  return sum;
+}
+maxIncreaseKeepingSkyline(grid);
