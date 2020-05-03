@@ -8,7 +8,7 @@ class TreeNode {
     this.right = null;
   }
 }
-//
+//example case
 let a = new TreeNode(10);
 let b = new TreeNode(-4);
 let c = new TreeNode(3);
