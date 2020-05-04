@@ -1,6 +1,7 @@
 //LeetCode 30 day challange April 30th
 
-// Check if a string is a valid sequence from root to leaves path in
+// Check if a string is a valid sequence 
+// from root to leaves path in
 // a binary tree
 //
 //
@@ -64,8 +65,6 @@
   e.right = i;
 
 
-////check level
-
   //depth first uses a stack
   function depthFirst(root, array){
     let arr_str = array.join('');
@@ -91,35 +90,3 @@ depthFirst(a, [0,1,1])
 depthFirst(a, [0,0])
 
 
-
-
-
-function breadthFirstArray(root, array){
-  let level = 0;
-  let queue = [[root, 0]];
-  let checkedNodesVals = [];
-  while(queue.length){
-    let sub = queue.shift();
-    let value = sub[0].val;
-    console.log('-----')
-    checkedNodesVals.push([value, level]);
-    level++;
-    if(sub[0].left) queue.push([sub[0].left, (level)]);
-    if(sub[0].right) queue.push([sub[0].right, (level)]);
-  }
-  return checkedNodesVals;
-}
-breadthFirstArray(a)
-
-  //
-  //
-  //
-  // function depthFirstRecur(root){
-  //   if(!root) return;
-  //   console.log(root.val);
-  //   depthFirstRecur(root.left);
-  //   depthFirstRecur(root.right);
-  //
-  // }
-  //
-  // depthFirstRecur(a);
