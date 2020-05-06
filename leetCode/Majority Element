@@ -1,0 +1,14 @@
+//Majority Element
+
+var majorityElement = function(nums) {
+    let s = nums.sort();
+    let maj =[0,0];
+    for(i= 0; i< s.length;i++){
+        
+        let size = (s.lastIndexOf(s[i]) - s.indexOf(s[i]) + 1);
+            if(size >= maj[1]) maj = [s[i], size];
+        i = s.lastIndexOf(s[i]);
+    }
+    return maj[0];
+
+};
