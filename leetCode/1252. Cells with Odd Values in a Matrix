@@ -1,0 +1,38 @@
+
+
+//1252. Cells with Odd Values in a matrix
+
+function helper(n,m){
+    let out  = [];
+    for(i=0;i<n;i++){
+        let arr = new Array(m).fill(0);
+        out.push(arr);
+    }
+    return out;
+
+}
+
+var oddCells = function(n, m, indices) {
+    let mat = helper(n, m);
+    let count = 0;
+    for(i in indices){
+        let [r, c] = indices[i];
+        for(j in mat[r]){
+            mat[r][j] = mat[r][j] + 1;
+        }
+        for(x in mat){
+           mat[x][c] = mat[x][c] +1;
+        }
+    }
+    
+    for(row in mat){
+        for( col in mat[row]){
+            if (mat[row][col] % 2 !== 0){
+                count = count+1;
+            }
+        }
+    }
+    return count;
+    
+};
+ 
