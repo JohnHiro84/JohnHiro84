@@ -1,0 +1,44 @@
+
+var floodFill = function(image, sr, sc, newColor){
+
+  let oldColor = image[sr][sc];
+
+  //change this color
+    if(newColor !== oldColor){
+        image[sr][sc] = newColor;
+    }
+   else {
+       return image
+   }
+
+  //go north if its the old Color
+  if((sr -1) >= 0 && image[(sr-1)][sc] === oldColor){
+ 
+    floodFill(image, (sr-1), sc, newColor)
+
+  }
+
+  //go south etc
+
+  if((sr+1) < image.length && image[(sr+1)][sc] === oldColor){
+
+    floodFill(image, (sr+1), sc, newColor)
+
+  }
+
+  //go west
+
+  if((sc -1) >= 0 && image[sr][(sc-1)] === oldColor){
+
+    floodFill(image, sr, (sc-1), newColor)
+
+  }
+
+  if((sc + 1) < image[sr].length && image[sr][(sc+1)] === oldColor){
+
+    floodFill(image, sr, (sc+1), newColor)
+  }​
+
+  return image;
+}
+
