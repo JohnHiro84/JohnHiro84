@@ -4,7 +4,60 @@
 <meta charset="utf-8" />
 <title>Fruit Harvester</title>
 <link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' />
+<script src='./jqLib/jquery-3.5.0.min.js'></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+
+#container {
+  position: relative;
+}
+
+#controls {
+  position: inherit;
+  /* bottom: 0;
+  left: 0; */
+  width: 360px;
+  height: 210px;
+  padding: 10px;
+  background-color: gray;
+  position: inherit;
+
+    /* background-color: blue; */
+  margin: 0em auto;
+}
+
+.touch-controls {
+  width: 70px;
+  height: 70px;
+  margin: 0em auto;
+  display: block;
+  border-radius: 25px;
+  border: 0px;
+  color: white;
+  font-weight: 700;
+}
+
+#touch-up {
+  background-color: midnightblue;
+}
+
+#touch-left {
+  background-color: darkgreen;
+  display: inline-block;
+  float:left;
+  margin-left: 5em;
+}
+#touch-right {
+  background-color: red;
+  display: inline-block;
+  float: right;
+  margin-right: 5em;
+}
+#touch-down {
+  background-color: yellow;
+  margin-top:70px;
+  color: grey;
+}
 body {
   padding:0;
   margin:0;
@@ -13,11 +66,14 @@ body {
 canvas {
   display:block;
   margin:30px auto 0;
-  border:1px dashed #ccc;
+  /* border:1px dashed #ccc; */
   background:#000;
 }
 </style>
 <script>
+
+
+
 //setting the sound effects
 var slurp = document.createElement("audio");
 slurp.src = "./sfx/slurp.wav";
@@ -488,11 +544,86 @@ function keyUp(e) {
   if (e.keyCode == 38) upKey = false;
   else if (e.keyCode == 40) downKey = false;
 }
+
+
+
+
 window.onload = init;
+
+
+
 </script>
 </head>
 
 <body>
-  <canvas id="canvas" width="360" height="360"></canvas>
+  <div id="container">
+    <canvas id="canvas" width="360" height="360">
+    </canvas>
+    <div id="controls">
+      <button type="button" id="touch-up" class="touch-controls">Up</button>
+      <button type="button" id="touch-left" class="touch-controls">Left</button>
+      <button type="button" id="touch-right" class="touch-controls">Right</button>
+      <button type="button" id="touch-down" class="touch-controls">Down</button>
+
+    </div>
+  </div>
+
 </body>
+
+<script type="text/javascript">
+
+let buttonUp = document.getElementById('touch-up');
+// let upButton = $('touch-up')
+buttonUp.addEventListener('touchstart', this.upPress.bind(this), false);
+buttonUp.addEventListener('touchend', this.upRelease.bind(this), false);
+
+function upPress(e){
+  e.preventDefault();
+  upKey = true;
+}
+function upRelease(){
+  upKey = false;
+}
+
+let buttonDown = document.getElementById('touch-down');
+// let upButton = $('touch-up')
+buttonDown.addEventListener('touchstart', this.downPress.bind(this), false);
+buttonDown.addEventListener('touchend', this.downRelease.bind(this), false);
+
+function downPress(e){
+  e.preventDefault();
+  downKey = true;
+}
+function downRelease(){
+  downKey = false;
+}
+
+
+let buttonRight = document.getElementById('touch-right');
+buttonRight.addEventListener('touchstart', this.rightPress.bind(this), false);
+buttonRight.addEventListener('touchend', this.rightRelease.bind(this), false);
+
+function rightPress(e){
+  e.preventDefault();
+  rightKey = true;
+}
+function rightRelease(){
+  rightKey = false;
+}
+
+
+let buttonLeft = document.getElementById('touch-left');
+buttonLeft.addEventListener('touchstart', this.leftPress.bind(this), false);
+buttonLeft.addEventListener('touchend', this.leftRelease.bind(this), false);
+
+function leftPress(e){
+  e.preventDefault();
+  leftKey = true;
+}
+function leftRelease(){
+  leftKey = false;
+}
+
+
+</script>
 </html>
