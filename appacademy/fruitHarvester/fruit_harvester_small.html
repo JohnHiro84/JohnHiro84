@@ -8,8 +8,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 
+
+
 #container {
-  position: relative;
+  background-color: gray;
+  /* position: relative; */
 }
 
 #controls {
@@ -17,7 +20,7 @@
   /* bottom: 0;
   left: 0; */
   width: 360px;
-  height: 210px;
+  height: 170px;
   padding: 10px;
   background-color: gray;
   position: inherit;
@@ -28,15 +31,18 @@
 
 .touch-controls {
   width: 70px;
-  height: 70px;
+  height: 50px;
   margin: 0em auto;
   display: block;
-  border-radius: 25px;
+  border-radius: 15px;
   border: 0px;
   color: white;
   font-weight: 700;
 }
 
+#touch-up:hover, #touch-up:active {
+  opacity: .6;
+}
 #touch-up {
   background-color: midnightblue;
 }
@@ -54,20 +60,22 @@
   margin-right: 5em;
 }
 #touch-down {
-  background-color: yellow;
-  margin-top:70px;
-  color: grey;
+  background-color: gold;
+  margin-top:50px;
+  /* color: grey; */
 }
 body {
   padding:0;
   margin:0;
-  background:#666;
+  background-color: gray;
+  /* background:#666; */
 }
 canvas {
   display:block;
-  margin:30px auto 0;
-  /* border:1px dashed #ccc; */
-  background:#000;
+  margin:1em auto;
+  border:8px solid gray;
+  border-radius: 1em;
+  /* background:#000; */
 }
 </style>
 <script>
@@ -572,57 +580,87 @@ window.onload = init;
 
 <script type="text/javascript">
 
+///key presses for touch screen devices
+
+//button Up
 let buttonUp = document.getElementById('touch-up');
-// let upButton = $('touch-up')
 buttonUp.addEventListener('touchstart', this.upPress.bind(this), false);
 buttonUp.addEventListener('touchend', this.upRelease.bind(this), false);
 
 function upPress(e){
   e.preventDefault();
+  buttonUp.style.opacity = '.85';
+  buttonUp.style.border = '2px solid dimgray';
+
   upKey = true;
 }
 function upRelease(){
+  buttonUp.style.opacity = '1';
+  buttonUp.style.border = '';
+
   upKey = false;
 }
 
+
+//button Down
 let buttonDown = document.getElementById('touch-down');
-// let upButton = $('touch-up')
 buttonDown.addEventListener('touchstart', this.downPress.bind(this), false);
 buttonDown.addEventListener('touchend', this.downRelease.bind(this), false);
 
 function downPress(e){
   e.preventDefault();
+  buttonDown.style.opacity = '.85';
+  buttonDown.style.border = '2px solid dimgray';
+
   downKey = true;
 }
 function downRelease(){
+  buttonDown.style.opacity = '1';
+  buttonDown.style.border = '';
+
   downKey = false;
 }
 
 
+//button Right
 let buttonRight = document.getElementById('touch-right');
 buttonRight.addEventListener('touchstart', this.rightPress.bind(this), false);
 buttonRight.addEventListener('touchend', this.rightRelease.bind(this), false);
 
 function rightPress(e){
   e.preventDefault();
+  buttonRight.style.opacity = '.85';
+  buttonRight.style.border = '2px solid dimgray';
+
   rightKey = true;
 }
 function rightRelease(){
+  buttonRight.style.opacity = '1';
+  buttonRight.style.border = '';
+
   rightKey = false;
 }
 
 
+//button Left
 let buttonLeft = document.getElementById('touch-left');
 buttonLeft.addEventListener('touchstart', this.leftPress.bind(this), false);
 buttonLeft.addEventListener('touchend', this.leftRelease.bind(this), false);
 
 function leftPress(e){
   e.preventDefault();
+  buttonLeft.style.opacity = '.85';
+  buttonLeft.style.border = '2px solid dimgray';
+
   leftKey = true;
 }
 function leftRelease(){
+  buttonLeft.style.opacity = '1';
+  buttonLeft.style.border = '';
+
   leftKey = false;
 }
+
 
 
 </script>
