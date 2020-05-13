@@ -1,6 +1,6 @@
 # Fruit Harvester
 
-![alt text](4182c0.gif)
+![alt text](4182zm.gif)
 
 Test your skill as you gather fruit for the current harvest. Be sure to avoid any of the rotten red fruit as they diminish your total score. Pick up speed boosts along the way to maximize the amount of gathered fruit.
 
