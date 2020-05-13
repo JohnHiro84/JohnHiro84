@@ -1,0 +1,11 @@
+
+var singleNonDuplicate = function(nums) {
+   let num = 0;
+   for(i in nums){
+       num^=nums[i];
+  }
+  return num;
+};
+
+
+
