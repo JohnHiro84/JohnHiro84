@@ -1,0 +1,24 @@
+
+var destCity = function(paths) {
+    if(paths.length === 1){
+        return paths[0][1];
+    }
+    let merged  =[];
+    let loners = [];
+    for(i in paths){
+        merged  = merged.concat(paths[i]);        
+    }
+    merged.sort();
+    for(j = 0; j < merged.length; j++){
+        if (merged[j] !== merged[j-1] && merged[j] !== merged[j+1]){
+            loners.push(merged[j]);
+        }
+    }
+    for(x in paths){
+      if(loners.includes(paths[x][1])){
+        return paths[x][1];    
+      }
+    }
+    return -1;
+};
+ 
