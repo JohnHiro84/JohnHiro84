@@ -1,5 +1,3 @@
-
-
 var canConstruct = function(ransomNote, magazine){
   let mag = magazine.split('');
   for(char in ransomNote){
