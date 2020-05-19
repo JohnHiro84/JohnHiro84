@@ -1,0 +1,12 @@
+var intersection = function(nums1, nums2) {
+
+    let cross = {};
+
+    for(j in nums2){
+        if(nums1.includes(nums2[j])){
+            cross[nums2[j]] =1;
+        }
+
+    }
+    return Object.keys(cross);
+};
