@@ -1,0 +1,34 @@
+var isHappy = function(n) {
+
+    let obj = {};
+
+    let str;
+
+    let nextNum = n;
+
+    while(obj[nextNum] === undefined){
+
+        if(nextNum === 1){
+
+            return true;
+
+        }
+
+        obj[nextNum] = 1;
+
+        str = nextNum.toString();
+
+        nextNum = 0;
+
+        for(i in str){
+
+            nextNum += (Number(str[i]) * Number(str[i]))
+
+        }
+
+    }
+
+    return false;
+
+};
+ 
