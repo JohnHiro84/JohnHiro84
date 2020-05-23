@@ -1,0 +1,24 @@
+var twoSum = function(nums, target) {
+
+    let him = new Map;
+
+    for(i in nums){
+
+        him.set(nums[i], i);
+
+    }
+
+    for(j in nums){
+
+        let ex = him.get(target - nums[j]);
+
+        if(ex !== undefined && j !== ex){
+
+            return [j, ex];
+
+        }
+
+    }
+
+};
+  
