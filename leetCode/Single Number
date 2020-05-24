@@ -1,0 +1,11 @@
+
+var singleNumber = function(nums) {
+
+    let xor;
+
+    for(a in nums){
+        xor = xor ^ nums[a];
+    }
+    return xor;
+
+};
