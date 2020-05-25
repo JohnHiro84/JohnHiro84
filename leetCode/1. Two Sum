@@ -1,3 +1,6 @@
+// return the indexes of the numbers 
+// that add up to the target
+
 var twoSum = function(nums, target) {
 
     let him = new Map;
