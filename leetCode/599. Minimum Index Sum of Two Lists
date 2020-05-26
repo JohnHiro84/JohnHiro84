@@ -1,0 +1,32 @@
+
+var findRestaurant = function(list1, list2) {
+
+   let sect = {};
+
+   for(j in list2){
+
+       let ele2 = list2[j];
+
+       if(list1.includes(ele2)){
+
+           let first = list1.indexOf(ele2);
+
+           if(sect[Number(first) + Number(j)]){
+
+               sect[Number(first) + Number(j)].push(ele2);
+
+          } else {
+
+               sect[Number(first) + Number(j)] = [ele2];
+
+          }
+
+      }
+  }
+
+   return Object.values(sect)[0];
+
+
+};
+
+  
