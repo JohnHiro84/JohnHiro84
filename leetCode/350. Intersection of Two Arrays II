@@ -1,0 +1,32 @@
+
+var intersect = function(nums1, nums2){
+  let obj1 = {};
+  let obj2 = {};
+  for(i in nums1){
+    if(obj1[nums1[i]]){
+      obj1[nums1[i]] = obj1[nums1[i]] + 1;
+    } else {
+      obj1[nums1[i]] = 1;
+    }
+  }
+  for(i in nums2){
+    if(obj2[nums2[i]]){
+      obj2[nums2[i]] = obj2[nums2[i]] + 1;
+    } else {
+      obj2[nums2[i]] = 1;
+    }
+  }
+  let outputArr = [];
+
+  for(i in nums1){
+    let ele = nums1[i];
+    if(obj1[ele] && obj2[ele] ){
+      let newarray = [];
+      if(!outputArr.includes(ele)){
+        newarray = (Array(Math.min(obj1[ele], obj2[ele])).fill(ele));
+      }
+      outputArr = outputArr.concat(newarray);
+    }
+  }
+  return outputArr;
+}
