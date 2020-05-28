@@ -1,0 +1,19 @@
+
+var countBits = function(num) {
+
+   let output = [];
+
+    for(i = 0;i <= num;i++){
+
+        arr = (i).toString(2).split('');
+
+        output.push(arr.reduce((total, val) => total + Number(val), 0));
+
+        
+
+    }
+
+    return output;
+
+};
+
