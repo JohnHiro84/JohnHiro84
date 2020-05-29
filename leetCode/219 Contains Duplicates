@@ -1,0 +1,28 @@
+
+var containsNearbyDuplicate = function(nums, k) {
+
+   let found = false;
+
+    for(i in nums){
+
+        let j = Number(i) + 1;
+
+        let lim = Number(i) + k;
+
+        while(j <= lim && j < nums.length){
+
+            if(nums[i] === nums[j]){
+
+                found = true;
+
+            }
+
+            j++;
+
+        }
+
+    }
+
+    return found;
+
+};
