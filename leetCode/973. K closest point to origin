@@ -1,0 +1,36 @@
+ 
+var kClosest = function(points, K) {
+
+   let arr = [];
+
+   let out = [];
+
+    for(a in points){
+
+        let distance = (Math.pow(points[a][0], 2)+ Math.pow(points[a][1], 2));
+
+        let newObj = {};
+
+        newObj['coords'] = points[a];
+
+        newObj['dist'] = distance;
+
+        arr.push(newObj);
+
+    }   
+
+    arr.sort(function(a,b){
+
+        return a.dist - b.dist;
+
+    });
+
+    for(j=0;j<K;j++){
+
+        out.push(arr[j].coords);
+
+    }       
+        
+    return out;
+
+};
