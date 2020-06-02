@@ -1,0 +1,24 @@
+
+var groupAnagrams = function(strs) {
+
+   let buckets = {};
+
+    for(i in strs){
+
+        let sorted = strs[i].split("").sort().join("");
+
+        if(buckets[sorted]){
+
+            buckets[sorted].push(strs[i]);
+
+        } else{
+            
+            buckets[sorted] = [strs[i]];
+        }
+
+    }
+
+    return Object.values(buckets);
+
+};
+  
