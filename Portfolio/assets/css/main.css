@@ -1859,7 +1859,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			box-shadow: 0 0 0 2px indianred;
+			box-shadow: 0 0 0 2px cornflowerblue;
 		}
 
 	select {
@@ -1956,7 +1956,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			box-shadow: 0 0 0 2px indianred;
+			box-shadow: 0 0 0 2px cornflowerblue;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2683,7 +2683,7 @@ input, select, textarea {
 			.spotlight .image img {
 				border-radius: 5em;
 				width: 100%;
-				border: 4em solid indianred;
+				border: 4em solid cornflowerblue;
 			}
 
 		.spotlight .content {
@@ -2704,29 +2704,29 @@ input, select, textarea {
 		}
 
 		.spotlight:nth-child(1) {
-			/* background-color: rgba(0, 0, 0, 0.075); */
+			/* background-color: rgba(100,149,237, 0.075); */
 			/* opacity: .95; */
 		}
 
 		.spotlight:nth-child(2) {
-			/* background-color: rgba(0, 0, 0, 0.15); */
+			/* background-color: rgba(100,149,237, 0.15); */
 		}
 		.spotlight-opacity {
-			opacity: .95;
+			/* opacity: .95; */
 
 		}
 
 		.spotlight:nth-child(3) {
-			/* background-color: rgba(0, 0, 0, 0.225); */
-			opacity: .95;
+			/* background-color: rgba(100,149,237, 0.225); */
+			/* opacity: .95; */
 		}
 
 		.spotlight:nth-child(4) {
-			background-color: rgba(0, 0, 0, 0.3);
+			/* background-color: rgba(100,149,237, 0.3); */
 		}
 
 		.spotlight:nth-child(5) {
-			background-color: rgba(0, 0, 0, 0.375);
+			/* background-color: rgba(100,149,237, 0.375); */
 		}
 
 		.spotlight:nth-child(6) {
@@ -2825,7 +2825,7 @@ input, select, textarea {
 
 		.wrapper.style1 {
 			padding: 4em 0 2em 0;
-			background-color: indianred;
+			background-color: cornflowerblue;
 			color: #c8ece9;
 		}
 
@@ -2879,7 +2879,7 @@ input, select, textarea {
 
 				.wrapper.style1 select option {
 					color: #ffffff;
-					background: indianred;
+					background: cornflowerblue;
 				}
 
 			.wrapper.style1 input[type="checkbox"] + label,
@@ -2895,7 +2895,7 @@ input, select, textarea {
 			.wrapper.style1 input[type="checkbox"]:checked + label:before,
 			.wrapper.style1 input[type="radio"]:checked + label:before {
 				background: #ffffff;
-				color: indianred;
+				color: cornflowerblue;
 			}
 
 			.wrapper.style1 ::-webkit-input-placeholder {
@@ -2988,7 +2988,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: cornflowerblue;
+			background-color: steelblue;
 			/* background-color: dimgrey; */
 			color: #d3d4e4;
 			/* color: white; */
@@ -3152,7 +3152,8 @@ input, select, textarea {
 			}
 
 		.wrapper.style4 {
-			background-color: transparent;
+			/* background-color: transparent; */
+			background-color: rgb(71,81,95);
 		}
 
 		.wrapper.style5 {
@@ -3364,7 +3365,7 @@ input, select, textarea {
 		-ms-transition: -ms-transform 0.5s ease;
 		transition: transform 0.5s ease;
 		-webkit-overflow-scrolling: touch;
-		background: indianred;
+		background: midnightblue;
 		color: #ffffff;
 		height: 100%;
 		max-width: 80%;
@@ -3458,7 +3459,8 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease;
 		-ms-transition: background-color 0.2s ease;
 		transition: background-color 0.2s ease;
-		background: #2e3842;
+		/* background: midnightblue; */
+		background: linear-gradient(90deg, midnightblue, black);
 		height: 3em;
 		left: 0;
 		line-height: 3em;
@@ -3598,14 +3600,14 @@ input, select, textarea {
 	}
 
 		#banner h2 {
-			-moz-transform: scale(1);
+			/* -moz-transform: scale(1);
 			-webkit-transform: scale(1);
 			-ms-transform: scale(1);
 			transform: scale(1);
 			-moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
 			-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
 			-ms-transition: -ms-transform 0.5s ease, opacity 0.5s ease;
-			transition: transform 0.5s ease, opacity 0.5s ease;
+			transition: transform 0.5s ease, opacity 0.5s ease; */
 			display: inline-block;
 			font-size: 1.75em;
 			opacity: 1;
@@ -3615,14 +3617,14 @@ input, select, textarea {
 		}
 
 			#banner h2:before, #banner h2:after {
-				-moz-transition: width 0.85s ease;
+				/* -moz-transition: width 0.85s ease;
 				-webkit-transition: width 0.85s ease;
 				-ms-transition: width 0.85s ease;
 				transition: width 0.85s ease;
 				-moz-transition-delay: 0.25s;
 				-webkit-transition-delay: 0.25s;
 				-ms-transition-delay: 0.25s;
-				transition-delay: 0.25s;
+				transition-delay: 0.25s; */
 				background: #fff;
 				content: '';
 				display: block;
@@ -3651,7 +3653,7 @@ input, select, textarea {
 			}
 
 		#banner .more {
-			-moz-transition: -moz-transform 0.75s ease, opacity 0.75s ease;
+			/* -moz-transition: -moz-transform 0.75s ease, opacity 0.75s ease;
 			-webkit-transition: -webkit-transform 0.75s ease, opacity 0.75s ease;
 			-ms-transition: -ms-transform 0.75s ease, opacity 0.75s ease;
 			transition: transform 0.75s ease, opacity 0.75s ease;
@@ -3662,7 +3664,7 @@ input, select, textarea {
 			-moz-transform: translateY(0);
 			-webkit-transform: translateY(0);
 			-ms-transform: translateY(0);
-			transform: translateY(0);
+			transform: translateY(0); */
 			border: none;
 			bottom: 0;
 			color: inherit;
@@ -3698,14 +3700,14 @@ input, select, textarea {
 
 		#banner:after {
 			pointer-events: none;
-			-moz-transition: opacity 3s ease-in-out;
+			/* -moz-transition: opacity 3s ease-in-out;
 			-webkit-transition: opacity 3s ease-in-out;
 			-ms-transition: opacity 3s ease-in-out;
 			transition: opacity 3s ease-in-out;
 			-moz-transition-delay: 1.25s;
 			-webkit-transition-delay: 1.25s;
 			-ms-transition-delay: 1.25s;
-			transition-delay: 1.25s;
+			transition-delay: 1.25s; */
 			content: '';
 			background: #2e3842;
 			display: block;
@@ -3899,7 +3901,8 @@ input, select, textarea {
 
 	#footer {
 		padding: 6em 0 4em 0 ;
-		background-color: #1d242a;
+		/* background-color: #1d242a; */
+		background: linear-gradient(90deg, midnightblue, black);
 		text-align: center;
 	}
 
@@ -3989,7 +3992,11 @@ input, select, textarea {
 	}
 
 	body.landing #footer {
-		background-color: rgba(29, 36, 42, 0.9);
+		/* background-color: rgba(29, 36, 42, 0.9); */
+		/* background-color: midnightblue; */
+		background: linear-gradient(90deg, midnightblue, black);
+
+
 	}
 
 	body.is-mobile.landing #page-wrapper {
@@ -4021,11 +4028,11 @@ input, select, textarea {
 }
 
 .content {
-	background-color: indianred;
+	background-color: cornflowerblue;
 }
 
 .spotlight {
-	background-color: indianred;
+	background-color: cornflowerblue;
 }
 
 .new-icon {
