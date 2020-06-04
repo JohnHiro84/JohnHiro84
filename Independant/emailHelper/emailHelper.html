@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+
+  </head>
+
+  <style media="screen">
+
+    body {
+      padding: 1em;
+    }
+    button, input {
+      padding: 1em;
+      margin: .5em;
+    }
+
+   label {
+     margin: .5em;
+   }
+  </style>
+  <body>
+    <h1>Email Helper</h1>
+    <label for="first">First:</label>
+    <br>
+
+    <input type="text" id='first' value="">
+
+    <br>
+    <label for="last">Last:</label>
+    <br>
+    <input type="text" id='last' value="">
+
+    <br>
+    <label for="company">Company:</label>
+    <br>
+    <input type="text" id='company' value="">
+
+    <br>
+    <label for="domain">Domain:</label>
+    <br>
+
+    <input type="text" id='domain' value=".com">
+
+  <br>
+
+    <button type="button" onclick=onClick() name="button">Create Emails</button>
+
+    <h3 id="results"></h3>
+    <script type="text/javascript">
+      var onClick = function(){
+
+          let firstName = document.getElementById('first').value;
+
+          let lastName = document.getElementById('last').value;
+
+          let companyName = document.getElementById('company').value;
+
+          let domain = document.getElementById('domain').value;
+
+          let results_str = "";
+
+        	let email = "@" + companyName + domain;
+        	results_str += (firstName[0] + lastName + email + " ");
+        	results_str += (firstName + lastName[0] + email + " ");
+        	results_str += (firstName + lastName + email + " ");
+        	results_str += (lastName + firstName[0] + email + " ");
+        	results_str += (lastName + email + " ");
+        	results_str += (firstName + email + " ");
+
+          console.log(results_str)
+          document.getElementById('results').innerHTML = results_str;
+
+        	return results_str;
+
+        }
+    </script>
+  </body>
+</html>
