@@ -1,0 +1,7 @@
+var findMaxConsecutiveOnes = function(nums) {
+
+   let arr =  nums.join('').split('0').sort();
+
+    return arr[arr.length-1].length;
+
+};
