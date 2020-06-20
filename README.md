@@ -1,9 +1,10 @@
 # JohnHiro84
 
 This is my github pages project showcasing 
-different projects I've done in the past.
+different projects and coursework I've completed in the past.
 
-Most recently I finished App Academy's
+
+Most recently I finished App Academy's bootcamp
 curriculum. In the past, I've completed courses
 from codecademy(React), some basic courses from 
 the city college of San francisco(html/css/js),
