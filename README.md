@@ -13,5 +13,5 @@ a backend course from free code camp (using mongoDb,
 Node and express).
 
 
-https://johnhiro84.github.io/JohnHiro84/
+https://johnhiro84.github.io/JohnHiro84/Portfolio/index.html#
 
