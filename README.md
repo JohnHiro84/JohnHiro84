@@ -5,7 +5,7 @@ different projects and coursework I've completed in the past.
 
 
 Most recently I finished App Academy's bootcamp
-curriculum. The bootcamp teaches Ruby, Rails, SQL, mongdoD, react and the Mern stack.
+curriculum. The bootcamp teaches Ruby, Rails, SQL, mongoDb, react and the Mern stack.
 In the past, I've completed courses
 from codecademy(React), some basic courses from 
 the city college of San francisco(html/css/js),
