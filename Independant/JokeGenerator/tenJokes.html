@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="./nav-bar.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>10 Jokes at a Time</title>
+  </head>
+  <body>
+
+    <div class="topnav" id="myTopnav">
+      <a href="./oneJoke.html" >One Joke</a>
+      <a href="./tenJokes.html" class="active">Ten Jokes</a>
+      <a href="./tenJokesProgramming.html">Programming Jokes</a>
+      <a href="./chuckNorrisJoke.html">Chuck Norris Jokes</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+
+
+    <script type="text/javascript">
+
+      function fetchJoke(){
+      const promise = $.ajax({
+        url: "https://official-joke-api.appspot.com/random_ten",
+        type: "GET"
+      })
+      return promise;
+    }
+
+    async function asyncCall() {
+      console.log('calling');
+      const result = await fetchJoke();
+      console.log(result);
+      // document.getElementById("type").append(<p>hello</p>)
+      // document.getElementById("type").innerHTML = result.type;
+      // document.getElementById("setup").innerHTML = result.setup;
+      // document.getElementById("punchline").innerHTML = result.punchline;
+
+      result.forEach((ele, i) => {
+        console.log(i)
+
+        var node = document.createElement("LI");
+        node.className = "joke-type";
+        var textnode = document.createTextNode(result[i].type);
+        node.appendChild(textnode);
+        document.getElementById("jokesList").appendChild(node);
+
+        var node2 = document.createElement("LI");
+        node2.className = "joke-setup";
+        var textnode2 = document.createTextNode(result[i].setup);
+        node2.appendChild(textnode2);
+        document.getElementById("jokesList").appendChild(node2);
+
+        var node3 = document.createElement("LI");
+        node3.className = "joke-punchline";
+        var textnode3 = document.createTextNode(result[i].punchline);
+        node3.appendChild(textnode3);
+        document.getElementById("jokesList").appendChild(node3);
+
+
+
+      })
+
+    }
+    asyncCall();
+
+
+    // fetchJoke().then(res => console.log(res));
+    </script>
+
+    <h1 id="jokes-header">10 Jokes at a time</h1>
+    <ul id="jokesList">
+    </ul>
+
+    <button id="more-jokes" onClick="window.location.reload();">More Jokes!</button>
+    <h4 id="jokes-footer" ><a href="https://github.com/15Dkatz/official_joke_api"> Jokes from: https://github.com/15Dkatz/official_joke_api</a></h4>
+
+  </body>
+</html>

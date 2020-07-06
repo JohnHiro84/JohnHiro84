@@ -1,0 +1,67 @@
+body {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+
+#jokes-header {
+  margin-top: 3em;
+}
+
+
+
+.joke-type {
+  color: gray;
+  font-size: 12px;
+}
+
+.joke-setup{
+  margin: 1em 0 1em 0;
+  /* margin-bottom: 2em; */
+
+}
+
+.joke-punchline{
+  margin-bottom: 3em;
+
+}
+
+#joke-image {
+  margin-bottom: 3em;
+}
+
+#jokesList {
+  list-style-type: none;
+  text-align: center;
+  padding-left: 0;
+  margin: auto;
+  line-height: 1.8;
+  padding-top: 3em;
+  max-width: 700px;
+}
+
+#more-jokes {
+  padding: 2em 6em;
+  background-color: cornflowerblue;
+  border: 0;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 4em;
+  font-size: 16px;
+}
+
+#more-jokes:hover {
+  background-color: blue;
+  cursor: pointer;
+}
+
+#jokes-footer {
+  margin-bottom: 10em;
+}
+
+#jokes-footer a {
+  text-decoration: none;
+  color: steelblue;
+}
