@@ -21,8 +21,8 @@ app.get('/IpLangUserAgentSource', function(req, res){
 
     console.log ( ip.address() );
 
-    //console.log('figuringoutIp');
     //console.log(req.ip);
+    //console.log('figuringoutIp');
 
     console.log(req.useragent.source);
 
