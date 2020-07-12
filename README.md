@@ -8,7 +8,7 @@ Most recently I finished App Academy's bootcamp
 curriculum. The bootcamp teaches Ruby, Rails, SQL, mongoDb, react and the Mern stack.
 In the past, I've completed courses
 from Codecademy(ReactJs), some basic courses from 
-the city college of San francisco(html/css/js),
+the City College of San francisco(html/css/js),
 Responsive design and images from Udacity, and 
 a backend course from free code camp (using mongoDb,
 Node and express).
