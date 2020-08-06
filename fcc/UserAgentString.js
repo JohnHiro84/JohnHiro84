@@ -15,7 +15,7 @@ app.get('/IpLangUserAgentSource', function(req, res){
 
     console.log("from route /IpLangUserAgentSource");
     console.log(req.headers["accept-language"]);
-    //console.log('remoteAddress:');
+
     //console.log(req.connection.remoteAddress);
 
 
