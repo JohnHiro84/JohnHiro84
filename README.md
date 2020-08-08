@@ -10,7 +10,7 @@ In the past, I've completed courses
 from Codecademy(ReactJs), some basic courses from 
 the City College of San francisco(html/css/js),
 Responsive design and images from Udacity, and 
-a backend course from free code camp (using mongoDb,
+a backend course from Free Code Camp (using mongoDb,
 Node and express).
 
 ## Portfolio
