@@ -13,7 +13,7 @@ Responsive design and images from Udacity, and
 a backend course from Free Code Camp (using mongoDb,
 Node and express).
 
-## Portfolio
+
 [Portfolio](https://bit.ly/3dOGoZM)
 
 
